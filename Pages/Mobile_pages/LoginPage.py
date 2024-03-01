@@ -23,7 +23,9 @@ def Login_Screen():
     wait = WebDriverWait(appium_driver, 100)
     login_link = wait.until(EC.presence_of_element_located((By.XPATH, LoginScreen.xpath_login_link)))
     if login_link.is_displayed():
+
         login_link.click()
+        print('Login link button is clicked')
         login_link_status = True
         login_email_input = wait.until(EC.presence_of_element_located((By.XPATH,
                                                                        LoginScreen.xpath_email_input)))

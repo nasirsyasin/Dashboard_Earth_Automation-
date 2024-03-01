@@ -56,3 +56,4 @@ def log_test_result(test_name, status):
 
 if __name__ == "__main__":
     pytest.main()
+    pytest.test_login_with_email()

@@ -1,8 +1,7 @@
 import csv
-
 import pytest
-from mobile_locators.onboarding_locators import (EntryScreen, onboarding_screens, Social_SignupScreen,
-                                                 Signup_EmailScreen)
+from Pages.Mobile_pages.OnboardingPage import (EntryScreen, onboarding_screens, Social_SignupScreen,
+                                               Signup_EmailScreen)
 
 # Entry Screen
 get_started_btn_clicked = EntryScreen()

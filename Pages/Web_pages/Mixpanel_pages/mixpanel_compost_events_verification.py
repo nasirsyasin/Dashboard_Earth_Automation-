@@ -1,5 +1,5 @@
 import pytest
-from .csv_comparison import compare_csv_by_column
+from csv_comparison import compare_csv_by_column
 
 predefine_ewaste_events = "/Users/mac/Documents/Python_Projects/DBE_Project/Mixpanel_Results/predefine_compost_events.csv"
 mixpanel_events = "/Users/mac/Documents/Python_Projects/DBE_Project/Mixpanel_Results/mixpanel_events.csv"

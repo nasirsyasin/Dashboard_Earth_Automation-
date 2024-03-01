@@ -1,10 +1,10 @@
 import pytest
-from Login_with_email import test_login_with_email
-from Ewaste_flow import test_Ewaste, test
+from Tests.Mobile_Tests.Login_with_email import test_login_with_email
+from Tests.Mobile_Tests.Ewaste_flow import test_Ewaste
 import csv
 
-from mixpanel_analytics.mixpanel_export_events import test_mixpanel
-from mixpanel_analytics.mixpanel_ewaste_events_verification import test_ewaste_events_verification
+from Pages.Web_pages.Mixpanel_pages.mixpanel_export_events import test_mixpanel
+from Pages.Web_pages.Mixpanel_pages.mixpanel_ewaste_events_verification import test_ewaste_events_verification
 
 Execute_signup_with_email = test_login_with_email()
 Execute_Ewaste_onboarding = test_Ewaste()

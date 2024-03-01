@@ -1,7 +1,7 @@
 import pytest
-from Mobile_Tests.Login_with_email import test_login_with_email
-from Mobile_Tests.compost_mvp_flow import compost_mvp_screens
-from Pages.Web_pages.Mixpanel_pages.mixpanel_analytics import test_mixpanel
+from Tests.Mobile_Tests.Login_with_email import test_login_with_email
+from Tests.Mobile_Tests.compost_mvp_flow import compost_mvp_screens
+from Pages.Web_pages.Mixpanel_pages.mixpanel_export_events import test_mixpanel
 import csv
 
 Execute_Login_with_email = test_login_with_email()

@@ -1,10 +1,10 @@
 import pytest
-from mobile_locators.ewaste_locators import test_Ewaste_onboarding, test_ewaste_complete
+from Pages.Mobile_pages.eWest_page.ewaste_locators import test_Ewaste_onboarding, test_yes_flow, test_map_photo_upload
 import csv
 
 (ewaste_action_btn, ewaste_no_btn, ewaste_no_arrow, ewaste_action_btn_not_sure,
  ewaste_not_sure_btn) = test_Ewaste_onboarding()
-(ewaste_not_sure_back_arrow, ewaste_yes_btn, ewaste_yes_arrow) = test_ewaste_complete()
+(ewaste_not_sure_back_arrow, ewaste_yes_btn, ewaste_yes_arrow) = test_yes_flow()
 
 
 @pytest.mark.csv

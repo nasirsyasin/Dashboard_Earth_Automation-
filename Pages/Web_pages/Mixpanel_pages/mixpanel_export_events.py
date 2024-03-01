@@ -3,9 +3,9 @@ from bs4 import BeautifulSoup
 import pytest
 import time
 from selenium.webdriver.common.by import By
-from .mixpanel_web_access import driver_access_mixpanel
+from mixpanel_web_access import driver_access_mixpanel
 
-from utility.web_driver_base_setup import loadCookies
+from Utility.web_driver_base_setup import loadCookies
 
 driver = driver_access_mixpanel()
 mixpanel_events = "/Users/mac/Documents/Python_Projects/DBE_Project/Mixpanel_Results/mixpanel_events.csv"
