@@ -1,0 +1,12 @@
+Event Name,Status
+MVP_homescreen_your_tab_clicked,Passed
+MVP_homescreen_log_action_clicked,Passed
+clicked_compost_action,Passed
+MVP_no_flow_arrow_3_clicked,Passed
+MVP_yes_flow_arrow_1_clicked,Passed
+MVP_no_flow_arrow_2_clicked,Passed
+MVP_no_flow_arrow_1_clicked,Passed
+MVP_no_flow_get_started_1_expanded,Passed
+MVP_question_screen_no_clicked,Passed
+MVP_question_screen_yes_clicked,Passed
+onboarding_waitlist_page_viewed,Failed

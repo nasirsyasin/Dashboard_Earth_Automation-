@@ -1,0 +1,27 @@
+Event Name
+MVP_homescreen_your_tab_clicked
+MVP_homescreen_log_action_clicked
+clicked_compost_action
+enrolled_in_MVP
+MVP_no_flow_arrow_3_clicked
+MVP_no_flow_get_started_1_expanded
+MVP_no_flow_arrow_2_clicked
+MVP_no_flow_arrow_1_clicked
+MVP_question_screen_no_clicked
+MVP_yes_flow_arrow_1_clicked
+MVP_question_screen_yes_clicked
+session_started
+session_ended
+signed_in_successfully
+login
+Identify
+logout
+you_page_viewed
+onboarding_account_created
+clicked_CTA_detailed_app_overview_screen
+clicked_next_app_overview_screen
+clicked_next_climate_anxiety_screen
+clicked_next_venn_diagram_screen
+get_started_clicked
+app_open
+App Session
