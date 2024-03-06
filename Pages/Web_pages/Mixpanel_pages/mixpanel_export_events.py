@@ -74,7 +74,7 @@ def test_mixpanel():
             "mp-input').shadowRoot.querySelector('div > div > input')"
         )
         # driver.execute_script("arguments[0].click()", event_filter)
-        enter_email_filter.send_keys("zubair.shahid+45887@mavrictech.com")
+        enter_email_filter.send_keys("zubair.shahid+80015@mavrictech.com")
 
         time.sleep(10)
         select_email_filter = driver.execute_script(

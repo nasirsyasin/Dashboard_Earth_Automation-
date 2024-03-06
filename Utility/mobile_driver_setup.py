@@ -1,3 +1,4 @@
+import pytest
 from appium import webdriver
 from selenium.common.exceptions import WebDriverException
 from appium.options.common import AppiumOptions
