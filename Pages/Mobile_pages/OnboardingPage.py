@@ -4,11 +4,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from Utility.random_email_generator import random_email_gen
 from Utility.mobile_driver_setup import AppiumDriverSingleton
-import time
-
-# # driver initialization
-# appium_driver_singleton = AppiumDriverSingleton()
-# appium_driver = appium_driver_singleton.get_driver
 
 # random email
 random_email = random_email_gen()

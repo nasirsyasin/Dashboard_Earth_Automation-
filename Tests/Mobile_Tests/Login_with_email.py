@@ -1,6 +1,7 @@
 import pytest
 from Pages.Mobile_pages.LoginPage import LoginPage
 import csv
+from Utility.CustomLoggerPlugin import DBELogUtils
 
 
 # login_link_clicked, login_email_input, login_password_input, login_btn, Notification_popup = Login_Screen()
@@ -9,6 +10,7 @@ import csv
 def test_login_with_email():
     ls = LoginPage()
     if ls.login_link():
+        DBELogUtils.markPassed("login link is available")
         login_link_status = 'Pass'
         log_test_result("Verify that upon tapping login link user should navigate to login screen",
                         login_link_status)
@@ -36,6 +38,7 @@ def test_login_with_email():
 
     else:
         entry_login_link_status = 'Fail'
+        DBELogUtils.markFailed("login link is not available")
         log_test_result("Verify that upon tapping login link user should navigate to login screen",
                         entry_login_link_status)
 

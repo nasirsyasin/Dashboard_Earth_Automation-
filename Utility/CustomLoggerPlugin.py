@@ -1,37 +1,44 @@
 import logging
-import pytest
 
 
-class CustomLoggerPlugin:
-    def __init__(self):
-        self.logger = logging.getLogger(__name__)
+class DBELogUtils:
+    logger = logging.getLogger('DBELogger')
+    logger.setLevel(logging.DEBUG)
+    formatter = logging.Formatter('[DBE]: %(message)s')
 
-    def pytest_runtest_logstart(self, nodeid, location):
-        self.logger.info(f"Starting test: {nodeid}")
+    @staticmethod
+    def markError(message):
+        DBELogUtils.logger.error(message)
 
-    def pytest_runtest_report(self, report):
-        if report.failed:
-            self.logger.error(f"Test failed: {report.nodeid}")
-        elif report.skipped:
-            self.logger.warning(f"Test skipped: {report.nodeid}")
-        else:
-            self.logger.info(f"Test passed: {report.nodeid}")
+    @staticmethod
+    def markErrorAndStop(message):
+        DBELogUtils.logger.error(message)
+        raise RuntimeError(message)
 
-    def pytest_sessionstart(self, session):
-        self.logger.info("Test session started")
+    @staticmethod
+    def markPassed(message):
+        DBELogUtils.logger.info(message)
 
-    def pytest_sessionfinish(self, session, exitstatus):
-        self.logger.info("Test session finished")
+    @staticmethod
+    def markFailed(message):
+        DBELogUtils.logger.warning(message)
 
-    def pytest_collection_finish(self, session):
-        self.logger.info("Test collection finished")
+    @staticmethod
+    def markFailedAndStop(message):
+        DBELogUtils.logger.warning(message)
+        raise RuntimeError(message)
 
-    def pytest_collection_modifyitems(self, session, config, items):
-        for item in items:
-            self.logger.debug(f"Test collected: {item.nodeid}")
+    @staticmethod
+    def markWarning(message):
+        DBELogUtils.logger.warning(message)
 
-    def pytest_runtest_setup(self, item, nextitem):
-        self.logger.debug(f"Setting up test: {item.nodeid}")
+    @staticmethod
+    def logInfo(message):
+        DBELogUtils.logger.info(message)
 
-    def pytest_runtest_teardown(self, item, nextitem):
-        self.logger.debug(f"Tearing down test: {item.nodeid}")
+
+# Configure logging to write to a file
+file_handler = logging.FileHandler('dbe.log')
+file_handler.setLevel(logging.DEBUG)
+file_handler.setFormatter(DBELogUtils.formatter)
+DBELogUtils.logger.addHandler(file_handler)
