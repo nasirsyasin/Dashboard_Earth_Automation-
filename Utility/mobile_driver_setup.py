@@ -19,19 +19,36 @@ class AppiumDriverSingleton:
     @staticmethod
     def create_driver():
         capabilities = {
-            "platformName": "Android",
-            "deviceName": "RF8RC109TVZ",
-            "app": "/Users/mac/Documents/Python_Projects/DBE_Project/Resources/stage-530.apk",
+            # "platformName": "Android",
+            # "deviceName": "RF8RC109TVZ",
+            #  "app": "/Users/mac/Documents/Python_Projects/DBE_Project/Resources/stage-530.apk",
             "skipDeviceInitialization": True,
             "skipServerInstallation": True,
             "dontStopAppOnReset": True,
             "fullReset": False,
-            "noReset": True
+            "noReset": True,
+            # BrowserStack capabilities
+            'userName': 'zubairshahid_nJNfdh',
+            'accessKey': 'quhiSvWjy1Var2txvskx',
+            'framework': 'pytest',
+            'app': 'bs://d1abdbc82f3b33d2960fb4b16cb9e5acf05a8857',
+            'platforms': [
+                {
+                    'platformName': 'android',
+                    'deviceName': 'Samsung Galaxy S22 Ultra',
+                    'platformVersion': '12.0',
+                    'parallelsPerPlatform': 1,
+                    'browserstackLocal': True
+                }
+            ],
+            'buildName': 'browserstack-build-1',
+            'projectName': 'BrowserStack Sample'
+
         }
 
-        appium_server = 'http://localhost:4723/wd/hub'
+        browserstack_server = 'https://hub.browserstack.com/wd/hub'
         try:
-            driver = webdriver.Remote(appium_server, options=AppiumOptions().load_capabilities(capabilities))
+            driver = webdriver.Remote(browserstack_server, options=AppiumOptions().load_capabilities(capabilities))
             driver.implicitly_wait(100)  # Adjust the wait time as needed
             return driver
         except WebDriverException as e:
