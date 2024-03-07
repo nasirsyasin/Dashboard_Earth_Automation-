@@ -1,0 +1,12 @@
+userName: zubairshahid_nJNfdh
+accessKey: quhiSvWjy1Var2txvskx
+framework: pytest
+app: bs://sample.app
+platforms:
+  - platformName: ios
+    deviceName: iPhone 14 Pro Max
+    platformVersion: 16
+parallelsPerPlatform: 1
+browserstackLocal: true
+buildName: browserstack-build-1
+projectName: BrowserStack Sample

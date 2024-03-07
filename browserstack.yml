@@ -1,0 +1,12 @@
+userName: zubairshahid_nJNfdh
+accessKey: quhiSvWjy1Var2txvskx
+framework: pytest
+app: bs://d1abdbc82f3b33d2960fb4b16cb9e5acf05a8857
+platforms:
+  - platformName: android
+    deviceName: Samsung Galaxy A52
+    platformVersion: 11.0
+parallelsPerPlatform: 1
+browserstackLocal: true
+buildName: browserstack-build-1
+projectName: BrowserStack Sample
