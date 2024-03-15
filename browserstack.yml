@@ -8,5 +8,11 @@ platforms:
     platformVersion: 11.0
 parallelsPerPlatform: 1
 browserstackLocal: true
-buildName: browserstack-build-1
+buildName: DBE Stage
 projectName: BrowserStack Sample
+buildIdentifier: ${5.3.0}
+testObservability: true
+debug: true
+networkLogs: true
+percy: false
+percyCaptureMode: auto

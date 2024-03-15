@@ -23,8 +23,8 @@ class LoginPage:
             "login_btn": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[8]",
         }
 
-    # def __init__(self):
-    #     self.driver = AppiumDriverSingleton().get_driver
+    def __init__(self):
+        self.driver = AppiumDriverSingleton().get_driver
 
     def find_element(self, element_name):
         return WebDriverWait(self.driver, 100).until(
