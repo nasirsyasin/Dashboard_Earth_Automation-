@@ -1,61 +1,57 @@
 import pytest
 import csv
-from Pages.Mobile_pages.compost_page.MVPCompostPage import test_compost_mvp_flow, test_compost_mvp_no_flow, test_compost_complete
-
-mvp_get_started_btn, fork_1_yes_btn, fork_2_yes_arrow, fork_back_arrow_1, fork_back_arrow_2 = test_compost_mvp_flow()
-(fork_1_no_btn, fork_2_no_arrow, fork_3_no_arrow, fork_4_no_open_dropdown,
- fork_4_no_closed_dropdown, fork_4_no_arrow) = test_compost_mvp_no_flow()
-compost_done_tooltip, complete_compost_action = test_compost_complete()
+from Pages.Mobile_pages.compost_page.MVPCompostPage import MVPCompostPage
 
 
 @pytest.mark.csv
 def compost_mvp_screens():
-    if mvp_get_started_btn is True:
+    mvp_c = MVPCompostPage()
+    if mvp_c.mvp_compost_btn():
         mvp_get_started_btn_status = 'Pass'
         log_test_result("Verify that mvp_get_started_btn is tapped ", mvp_get_started_btn_status)
 
-        if fork_1_yes_btn is True:
+        if mvp_c.fork_1_yes_btn():
             fork_1_yes_btn_status = 'Pass'
             log_test_result("Verify that fork_1_yes_btn is tapped ", fork_1_yes_btn_status)
-            if fork_2_yes_arrow is True:
+            if mvp_c.fork_2_yes_arrow():
                 fork_2_yes_arrow_status = 'Pass'
                 log_test_result("Verify that fork_2_yes_arrow is tapped ", fork_2_yes_arrow_status)
 
-                if fork_back_arrow_1 is True:
+                if mvp_c.fork_back_arrow_1():
                     fork_back_arrow_1_status = 'Pass'
                     log_test_result("Verify that fork_back_arrow_1 is tapped ",
                                     fork_back_arrow_1_status)
-                    if fork_back_arrow_2 is True:
+                    if mvp_c.fork_back_arrow_2():
                         fork_back_arrow_2_status = 'Pass'
                         log_test_result("Verify that fork_back_arrow_2 is tapped ", fork_back_arrow_2_status)
 
-                        if fork_1_no_btn is True:
+                        if mvp_c.fork_1_no_btn():
                             fork_1_no_btn_status = 'Pass'
                             log_test_result("Verify that fork_1_no_btn is tapped ",
                                             fork_1_no_btn_status)
-                            if fork_2_no_arrow is True:
+                            if mvp_c.fork_2_no_arrow():
                                 fork_2_no_arrow_status = 'Pass'
                                 log_test_result("Verify that fork_2_no_arrow is tapped ", fork_2_no_arrow_status)
-                                if fork_3_no_arrow is True:
+                                if mvp_c.fork_3_no_arrow():
                                     fork_3_no_arrow_status = 'Pass'
                                     log_test_result("Verify that fork_3_no_arrow is tapped ", fork_3_no_arrow_status)
-                                    if fork_4_no_open_dropdown is True:
+                                    if mvp_c.fork_4_no_open_dropdown():
                                         fork_4_no_open_dropdown_status = 'Pass'
                                         log_test_result("Verify that fork_4_no_open_dropdown is tapped ",
                                                         fork_4_no_open_dropdown_status)
-                                        if fork_4_no_closed_dropdown is True:
+                                        if mvp_c.fork_4_no_closed_dropdown():
                                             fork_4_no_closed_dropdown_status = 'Pass'
                                             log_test_result("Verify that fork_4_no_closed_dropdown is tapped ",
                                                             fork_4_no_closed_dropdown_status)
-                                            if fork_4_no_arrow is True:
+                                            if mvp_c.fork_4_no_arrow():
                                                 fork_4_no_arrow_status = 'Pass'
                                                 log_test_result("Verify that fork_4_no_arrow is tapped ",
                                                                 fork_4_no_arrow_status)
-                                                if compost_done_tooltip is True:
+                                                if mvp_c.compost_done_tooltip():
                                                     compost_done_tooltip_status = 'Pass'
                                                     log_test_result("Verify that compost_done_tooltip is tapped ",
                                                                     compost_done_tooltip_status)
-                                                    if complete_compost_action is True:
+                                                    if mvp_c.complete_compost_action():
                                                         complete_compost_action_status = 'Pass'
                                                         log_test_result(
                                                             "Verify that complete_compost_action is tapped ",

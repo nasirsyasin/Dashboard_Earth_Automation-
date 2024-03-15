@@ -4,8 +4,6 @@ import csv
 from Utility.CustomLoggerPlugin import DBELogUtils
 
 
-# login_link_clicked, login_email_input, login_password_input, login_btn, Notification_popup = Login_Screen()
-
 @pytest.mark.csv
 def test_login_with_email():
     ls = LoginPage()

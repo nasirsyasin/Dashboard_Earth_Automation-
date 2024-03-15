@@ -12,6 +12,7 @@ from selenium.webdriver.common.by import By
 class TestSample:
 
     def test_example(self):
+
         test_button = WebDriverWait(self.driver, 30).until(
             EC.element_to_be_clickable(
                 (AppiumBy.ID, "com.example.android.basicnetworking:id/test_action"))
