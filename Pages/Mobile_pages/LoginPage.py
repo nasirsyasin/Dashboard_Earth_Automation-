@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from Utility.mobile_driver_setup import AppiumDriverSingleton
 
 
-@pytest.mark.usefixtures('setWebdriver')
+# @pytest.mark.usefixtures('setWebdriver')
 class LoginPage:
     _instance = None
 
@@ -21,6 +21,7 @@ class LoginPage:
             "email_input": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[1]",
             "password_input": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[2]",
             "login_btn": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[8]",
+            "iOS_allow": '//XCUIElementTypeAlert[@name="Allow “Dashboard.Earth” to track your activity across other companies’ apps and websites?"]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeScrollView[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther[3]'
         }
 
     def __init__(self):
@@ -29,6 +30,14 @@ class LoginPage:
     def find_element(self, element_name):
         return WebDriverWait(self.driver, 100).until(
             EC.presence_of_element_located((By.XPATH, self.xpath_map[element_name])))
+
+    # def allow_popup(self):
+    #     try:
+    #         self.find_element("iOS_allow").click()
+    #         return True
+    #     except Exception as e:
+    #         print(f"Exception occurred: {e}")
+    #         return False
 
     def login_link(self):
         try:
@@ -66,7 +75,7 @@ class LoginPage:
             print(f"Exception occurred: {e}")
             return False
 
-#
-# if __name__ == "__main__":
-#     pytest.main()
-#     pytest.LoginPage.login_link()
+
+if __name__ == "__main__":
+    pytest.main()
+    pytest.login_link()

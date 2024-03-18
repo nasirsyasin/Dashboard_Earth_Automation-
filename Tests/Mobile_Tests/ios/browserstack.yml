@@ -1,12 +1,18 @@
 userName: zubairshahid_nJNfdh
 accessKey: quhiSvWjy1Var2txvskx
 framework: pytest
-app: bs://sample.app
+app: bs://974f9a940f0b660c508b3c0c8efc76f0646ae2ff
 platforms:
   - platformName: ios
     deviceName: iPhone 14 Pro Max
     platformVersion: 16
 parallelsPerPlatform: 1
 browserstackLocal: true
-buildName: browserstack-build-1
-projectName: BrowserStack Sample
+buildName: Stage ipa
+buildIdentifier: ${5.3.3}
+projectName: DBE Automation iOS
+testObservability: true
+debug: true
+networkLogs: true
+percy: false
+percyCaptureMode: auto
