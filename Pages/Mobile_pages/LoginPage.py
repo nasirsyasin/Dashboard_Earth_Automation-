@@ -17,18 +17,24 @@ class LoginPage:
 
     def _initialize(self):
         self.xpath_map = {
-            "login_link": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.TextView",
-            "email_input": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[1]",
-            "password_input": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[2]",
-            "login_btn": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[8]",
-            "iOS_allow": '//XCUIElementTypeAlert[@name="Allow “Dashboard.Earth” to track your activity across other companies’ apps and websites?"]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeScrollView[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther[3]'
+            "login_link": '//android.view.ViewGroup[@content-desc="Log in"]/android.widget.TextView',
+            "email_input": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[1]",
+            "password_input": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[2]",
+            "login_btn": '//android.view.ViewGroup[@content-desc="Log in"]',
+            # iOS app xpath
+            "iOS_allow_popup": '//XCUIElementTypeAlert[@name="Allow “Dashboard.Earth” to track your activity across other companies’ apps and websites?"]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeScrollView[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther[3]',
+            "i_login_link": '//XCUIElementTypeOther[@name="Log in"]',
+            "i_email_input": '(//XCUIElementTypeOther[@name="Enter email "])[2]/XCUIElementTypeTextField',
+            "i_password_input": '//XCUIElementTypeOther[@name="Enter password"]/XCUIElementTypeSecureTextField',
+            "i_login_btn": '//XCUIElementTypeOther[@name="Log in"]'
+
         }
 
     def __init__(self):
         self.driver = AppiumDriverSingleton().get_driver
 
     def find_element(self, element_name):
-        return WebDriverWait(self.driver, 100).until(
+        return WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, self.xpath_map[element_name])))
 
     # def allow_popup(self):
@@ -41,7 +47,14 @@ class LoginPage:
 
     def login_link(self):
         try:
-            self.find_element("login_link").click()
+            if self.find_element("login_link"):
+                self.find_element("login_link").click()
+
+            elif self.find_element("iOS_allow_popup"):
+                self.find_element("iOS_allow_popup").click()
+                self.find_element("i_login_link").click()
+            else:
+                raise Exception("Login link element not found.")
             return True
         except Exception as e:
             print(f"Exception occurred: {e}")
@@ -49,9 +62,17 @@ class LoginPage:
 
     def email_input(self):
         try:
-            email_input = self.find_element("email_input")
-            email_input.clear()
-            email_input.send_keys("zubair.shahid+11660@mavrictech.com")
+            if self.find_element("email_input"):
+                email_input = self.find_element("email_input")
+                email_input.clear()
+                email_input.send_keys("zubair.shahid+11660@mavrictech.com")
+
+            elif self.find_element("i_email_input"):
+                email_input = self.find_element("i_email_input")
+                email_input.clear()
+                email_input.send_keys("zubair.shahid+11660@mavrictech.com")
+            else:
+                raise Exception("email_input element not found.")
             return True
         except Exception as e:
             print(f"Exception occurred: {e}")
@@ -59,9 +80,17 @@ class LoginPage:
 
     def password_input(self):
         try:
-            password_input = self.find_element("password_input")
-            password_input.clear()
-            password_input.send_keys("P@ss1234")
+            if self.find_element("password_input"):
+                password_input = self.find_element("password_input")
+                password_input.clear()
+                password_input.send_keys("P@ss1234")
+
+            elif self.find_element("i_password_input"):
+                password_input = self.find_element("i_password_input")
+                password_input.clear()
+                password_input.send_keys("P@ss1234")
+            else:
+                raise Exception("password_input element not found.")
             return True
         except Exception as e:
             print(f"Exception occurred: {e}")
@@ -69,7 +98,13 @@ class LoginPage:
 
     def login_btn(self):
         try:
-            self.find_element("login_btn").click()
+            if self.find_element("login_btn"):
+                self.find_element("login_btn").click()
+
+            elif self.find_element("i_login_link"):
+                self.find_element("i_login_btn").click()
+            else:
+                raise Exception("Login button element not found.")
             return True
         except Exception as e:
             print(f"Exception occurred: {e}")

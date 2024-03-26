@@ -20,18 +20,18 @@ class AppiumDriverSingleton:
     def create_driver():
         capabilities = {
             "platformName": "Android",
-            "deviceName": "RF8RC109TVZ",
-            "app": "/Users/mac/Documents/Python_Projects/DBE_Project/Resources/stage-530.apk",
+            "appium:deviceName": "RF8RC109TVZ",
+            "appium:app": "/Users/mac/Documents/Python_Projects/DBE_Project/Resources/stage-534.apk",
             "skipDeviceInitialization": True,
             "skipServerInstallation": True,
             "dontStopAppOnReset": True,
             "fullReset": False,
-            "noReset": True,
+            "noReset": True
         }
 
-        browserstack_server = 'https://hub-cloud.browserstack.com/wd/hub'
+        appium_server = 'http://localhost:4723/wd/hub'
         try:
-            driver = webdriver.Remote(browserstack_server, options=AppiumOptions().load_capabilities(capabilities))
+            driver = webdriver.Remote(appium_server, options=AppiumOptions().load_capabilities(capabilities))
             driver.implicitly_wait(100)  # Adjust the wait time as needed
             return driver
         except WebDriverException as e:

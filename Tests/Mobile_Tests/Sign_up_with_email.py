@@ -190,8 +190,8 @@ def test_signup_with_email():
 
 def log_test_result(test_name, status):
     csv_file = "Results/Sign_with_email.csv"
-    csv_headers = ["Signup Test Steps", "Status"]
-    csv_rows = [{"Signup Test Steps": test_name, "Status": status}]  # Wrapping rows in a list of dictionaries
+    csv_headers = ["Signup Tests Steps", "Status"]
+    csv_rows = [{"Signup Tests Steps": test_name, "Status": status}]  # Wrapping rows in a list of dictionaries
 
     with open(csv_file, mode='a', newline='') as file:
         writer = csv.DictWriter(file, fieldnames=csv_headers)

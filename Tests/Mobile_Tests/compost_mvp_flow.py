@@ -115,8 +115,8 @@ def compost_mvp_screens():
 
 def log_test_result(test_name, status):
     csv_file = "Results/Compost_MVP_Screens.csv"
-    csv_headers = ["Compost MVP Test Steps", "Status"]
-    csv_rows = [{"Compost MVP Test Steps": test_name, "Status": status}]  # Wrapping rows in a list of dictionaries
+    csv_headers = ["Compost MVP Tests Steps", "Status"]
+    csv_rows = [{"Compost MVP Tests Steps": test_name, "Status": status}]  # Wrapping rows in a list of dictionaries
 
     with open(csv_file, mode='a', newline='') as file:
         writer = csv.DictWriter(file, fieldnames=csv_headers)
