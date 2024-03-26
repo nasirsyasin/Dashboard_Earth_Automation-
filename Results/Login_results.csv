@@ -1,79 +1,12 @@
-Test Summary,Status
-Verify that upon tapping login link user should navigate to login screen,Pass
-Verify that user should able to enter email successfully ,Pass
-Verify that user should able to enter password successfully,Pass
-Verify that the user is able to complete a successful login,Pass
-Verify that upon tapping login link user should navigate to login screen,Pass
-Verify that user should able to enter email successfully ,Pass
-Verify that user should able to enter password successfully,Pass
-Verify that the user is able to complete a successful login,Pass
+Tests Summary,Status
 Verify that upon tapping login link user should navigate to login screen,Fail
+Verify that upon tapping login link user should navigate to login screen,Pass
+Verify that user should able to enter email successfully ,Pass
+Verify that user should able to enter password successfully,Pass
+Verify that the user is able to complete a successful login,Pass
 Verify that upon tapping login link user should navigate to login screen,Pass
 Verify that user should able to enter email successfully ,Fail
 Verify that upon tapping login link user should navigate to login screen,Pass
-Verify that user should able to enter email successfully ,Pass
-Verify that user should able to enter password successfully,Pass
-Verify that the user is able to complete a successful login,Pass
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Pass
-Verify that user should able to enter email successfully ,Pass
-Verify that user should able to enter password successfully,Pass
-Verify that the user is able to complete a successful login,Pass
-Verify that upon tapping login link user should navigate to login screen,Pass
-Verify that user should able to enter email successfully ,Pass
-Verify that user should able to enter password successfully,Pass
-Verify that the user is able to complete a successful login,Pass
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Fail
-Verify that upon tapping login link user should navigate to login screen,Pass
-Verify that user should able to enter email successfully ,Pass
-Verify that user should able to enter password successfully,Pass
-Verify that the user is able to complete a successful login,Pass
+Verify that user should able to enter email successfully ,Fail
 Verify that upon tapping login link user should navigate to login screen,Fail
 Verify that upon tapping login link user should navigate to login screen,Fail

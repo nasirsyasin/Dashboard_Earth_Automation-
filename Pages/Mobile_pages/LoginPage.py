@@ -22,7 +22,7 @@ class LoginPage:
             "password_input": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[2]",
             "login_btn": '//android.view.ViewGroup[@content-desc="Log in"]',
             # iOS app xpath
-            "iOS_allow_popup": '//XCUIElementTypeAlert[@name="Allow “Dashboard.Earth” to track your activity across other companies’ apps and websites?"]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeScrollView[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther[3]',
+            "iOS_allow_popup": '//XCUIElementTypeButton[@name="Allow"]',
             "i_login_link": '//XCUIElementTypeOther[@name="Log in"]',
             "i_email_input": '(//XCUIElementTypeOther[@name="Enter email "])[2]/XCUIElementTypeTextField',
             "i_password_input": '//XCUIElementTypeOther[@name="Enter password"]/XCUIElementTypeSecureTextField',
@@ -32,6 +32,8 @@ class LoginPage:
 
     def __init__(self):
         self.driver = AppiumDriverSingleton().get_driver
+        # self.is_ios = Platforms().is_ios
+        # self.is_android = Platforms().is_android
 
     def find_element(self, element_name):
         return WebDriverWait(self.driver, 10).until(
@@ -47,68 +49,95 @@ class LoginPage:
 
     def login_link(self):
         try:
-            if self.find_element("login_link"):
-                self.find_element("login_link").click()
-
-            elif self.find_element("iOS_allow_popup"):
+            # Check for iOS specific elements
+            if self.is_ios():
                 self.find_element("iOS_allow_popup").click()
                 self.find_element("i_login_link").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("login_link").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
             else:
-                raise Exception("Login link element not found.")
-            return True
+                raise Exception("Login link element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
     def email_input(self):
         try:
-            if self.find_element("email_input"):
-                email_input = self.find_element("email_input")
-                email_input.clear()
-                email_input.send_keys("zubair.shahid+11660@mavrictech.com")
-
-            elif self.find_element("i_email_input"):
+            # Check for iOS specific elements
+            if self.is_ios():
                 email_input = self.find_element("i_email_input")
                 email_input.clear()
                 email_input.send_keys("zubair.shahid+11660@mavrictech.com")
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                email_input = self.find_element("email_input")
+                email_input.clear()
+                email_input.send_keys("zubair.shahid+11660@mavrictech.com")
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
             else:
-                raise Exception("email_input element not found.")
-            return True
+                raise Exception("email_input element not found for any platform.")
+
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
     def password_input(self):
         try:
-            if self.find_element("password_input"):
-                password_input = self.find_element("password_input")
-                password_input.clear()
-                password_input.send_keys("P@ss1234")
-
-            elif self.find_element("i_password_input"):
+            # Check for iOS specific elements
+            if self.is_ios():
                 password_input = self.find_element("i_password_input")
                 password_input.clear()
                 password_input.send_keys("P@ss1234")
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                password_input = self.find_element("password_input")
+                password_input.clear()
+                password_input.send_keys("P@ss1234")
+                return True
+            # If neither iOS nor Android elements are found, raise an exception
             else:
-                raise Exception("password_input element not found.")
-            return True
+                raise Exception("Login link element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
     def login_btn(self):
         try:
-            if self.find_element("login_btn"):
-                self.find_element("login_btn").click()
-
-            elif self.find_element("i_login_link"):
+            # Check for iOS specific elements
+            if self.is_ios():
                 self.find_element("i_login_btn").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("login_btn").click()
+                return True
+            # If neither iOS nor Android elements are found, raise an exception
             else:
-                raise Exception("Login button element not found.")
-            return True
+                raise Exception("Login link element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
+
+    def is_ios(self):
+        platform_name = self.driver.desired_capabilities['platformName']
+        return platform_name.lower() == 'ios'
+
+    def is_android(self):
+        platform_name = self.driver.desired_capabilities['platformName']
+        return platform_name.lower() == 'android'
 
 
 if __name__ == "__main__":

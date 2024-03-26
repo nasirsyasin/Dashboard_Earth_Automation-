@@ -1,7 +1,7 @@
 userName: zubairshahid_nJNfdh
 accessKey: quhiSvWjy1Var2txvskx
 framework: pytest
-app: bs://d1abdbc82f3b33d2960fb4b16cb9e5acf05a8857
+app: bs://02255eaaba63d47c9c733f69c1a30d60e0b79c2e
 platforms:
   - platformName: android
     deviceName: Samsung Galaxy A52
@@ -10,7 +10,7 @@ parallelsPerPlatform: 1
 browserstackLocal: true
 buildName: Stage
 projectName: DBE Automation Android
-buildIdentifier: ${5.3.0}
+buildIdentifier: ${5.3.4}
 testObservability: true
 debug: true
 networkLogs: true
