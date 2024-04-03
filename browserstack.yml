@@ -6,7 +6,6 @@ platforms:
   - platformName: android
     deviceName: Samsung Galaxy A52
     platformVersion: 11.0
-parallelsPerPlatform: 1
 browserstackLocal: true
 buildName: Stage
 projectName: DBE Automation Android

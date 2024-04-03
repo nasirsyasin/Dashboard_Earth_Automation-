@@ -1,3 +1,5 @@
+import time
+
 import pytest
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -79,7 +81,6 @@ class LoginPage:
             # Check for Android specific elements
             elif self.is_android():
                 email_input = self.find_element("email_input")
-                email_input.clear()
                 email_input.send_keys("zubair.shahid+11660@mavrictech.com")
                 return True
 
@@ -117,6 +118,8 @@ class LoginPage:
         try:
             # Check for iOS specific elements
             if self.is_ios():
+                self.find_element("i_login_btn").click()
+                time.sleep(2)
                 self.find_element("i_login_btn").click()
                 return True
 

@@ -43,3 +43,4 @@ class AppiumDriverSingleton:
         if not self.driver:
             self.driver = self.create_driver()
         return self.driver
+

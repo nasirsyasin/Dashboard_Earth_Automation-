@@ -189,3 +189,10 @@ class EwastePage:
             print(f"Exception occurred: {e}")
             return False
 
+    def is_ios(self):
+        platform_name = self.driver.desired_capabilities['platformName']
+        return platform_name.lower() == 'ios'
+
+    def is_android(self):
+        platform_name = self.driver.desired_capabilities['platformName']
+        return platform_name.lower() == 'android'
