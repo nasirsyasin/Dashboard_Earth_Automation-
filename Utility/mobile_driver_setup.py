@@ -21,7 +21,7 @@ class AppiumDriverSingleton:
         capabilities = {
             "platformName": "android",
             "appium:deviceName": "RF8RC109TVZ",
-            "appium:app": "/Users/mac/Documents/Python_Projects/DBE_Project/Resources/stage-534.apk",
+            "appium:app": "/Users/mac/Documents/Python_Projects/DBE_Project/Resources/stage-536.apk",
             "skipDeviceInitialization": True,
             "skipServerInstallation": True,
             "dontStopAppOnReset": True,

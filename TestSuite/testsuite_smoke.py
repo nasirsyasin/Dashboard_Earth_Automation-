@@ -1,58 +1,46 @@
 import pytest
-from Tests.Mobile_Tests.Login_with_email import Login_with_email
+import csv
+from Tests.Mobile_Tests.Ewaste_flow import test_Ewaste
+from Tests.Mobile_Tests.Login_with_email import test_login_with_email
+from Tests.Mobile_Tests.TrackActions import test_TrackAction
+from Tests.Mobile_Tests.compost_mvp_flow import test_compost_mvp_screens
 
 
-def test_suite():
-    Login_with_email()
+class MobileTestSuite:
+    def __init__(self):
+        self.execute_login_with_email = test_login_with_email()
+        self.execute_track_action = test_TrackAction()
+        self.execute_compost = test_compost_mvp_screens()
+        self.execute_ewaste = test_Ewaste()
+
+    def run_tests(self):
+        self.execute_login_with_email_status = self.execute_login_with_email()
+        self.execute_track_action_status = self.execute_track_action()
+        self.execute_compost_status = self.execute_compost()
+        self.execute_ewaste_status = self.execute_ewaste()
+
+    def log_test_result(self, test_name, status):
+        csv_file = "/Users/mac/Documents/Python_Projects/DBE_Project/Results/Test_suit_results.csv"
+        csv_headers = ["Tests Summary", "Status"]
+        csv_rows = [{"Tests Summary": test_name, "Status": status}]
+
+        with open(csv_file, mode='a', newline='') as file:
+            writer = csv.DictWriter(file, fieldnames=csv_headers)
+
+            if file.tell() == 0:
+                writer.writeheader()
+
+            writer.writerows(csv_rows)
+
+    def execute_tests(self):
+        self.run_tests()
+        self.log_test_result("Verify that Execute_login_with_email successfully", self.execute_login_with_email_status)
+        self.log_test_result("Verify tht Execute_track_action successfully", self.execute_track_action_status)
+        self.log_test_result("Verify that Execute_compost successfully", self.execute_compost_status)
+        self.log_test_result("Verify that Execute_ewaste successfully", self.execute_ewaste_status)
 
 
-#
-# @pytest.mark.csv
-# def test_suite():
-#     if Execute_Login_with_email is True:
-#         Execute_Login_with_email_status = "Pass"
-#         log_test_result("Verify that user account should be create successfully ",
-#                         Execute_Login_with_email_status)
-#
-#         if Execute_Compost_mvp is True:
-#             Execute_Compost_mvp_status = "Pass"
-#             log_test_result("Verify tht should be logged in successfully ",
-#                             Execute_Compost_mvp_status)
-#             if Execute_mixpanel is True:
-#                 Execute_mixpanel_status = "Pass"
-#                 log_test_result("Verify that mixpanel should be executed successfully ",
-#                                 Execute_mixpanel_status)
-#
-#             else:
-#                 Execute_mixpanel_status = "Fail"
-#                 log_test_result("Verify that mixpanel should be executed successfully ",
-#                                 Execute_mixpanel_status)
-#
-#         else:
-#             Execute_Compost_mvp_status = "Fail"
-#             log_test_result("Verify tht should be logged in successfully",
-#                             Execute_Compost_mvp_status)
-#     else:
-#         Execute_SignUp_status = "Fail"
-#         log_test_result("Verify that user account should be create successfully",
-#                         Execute_SignUp_status)
-#
-#
-# def log_test_result(test_name, status):
-#     csv_file = "Results/Test_suit_results.csv"
-#     csv_headers = ["Tests Summary", "Status"]
-#     csv_rows = [{"Tests Summary": test_name, "Status": status}]  # Wrapping rows in a list of dictionaries
-#
-#     with open(csv_file, mode='a', newline='') as file:
-#         writer = csv.DictWriter(file, fieldnames=csv_headers)
-#
-#         # Check if the file is empty to write the header
-#         if file.tell() == 0:
-#             writer.writeheader()
-#
-#         writer.writerows(csv_rows)
-#
-#
 if __name__ == "__main__":
+    test_suite = MobileTestSuite()
+    test_suite.execute_tests()
     pytest.main()
-    pytest.test_suite()

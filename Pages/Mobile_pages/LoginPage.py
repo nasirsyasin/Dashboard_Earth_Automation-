@@ -25,10 +25,13 @@ class LoginPage:
             "login_btn": '//android.view.ViewGroup[@content-desc="Log in"]',
             # iOS app xpath
             "iOS_allow_popup": '//XCUIElementTypeButton[@name="Allow"]',
-            "i_login_link": '//XCUIElementTypeOther[@name="Log in"]',
-            "i_email_input": '(//XCUIElementTypeOther[@name="Enter email "])[2]/XCUIElementTypeTextField',
-            "i_password_input": '//XCUIElementTypeOther[@name="Enter password"]/XCUIElementTypeSecureTextField',
-            "i_login_btn": '//XCUIElementTypeOther[@name="Log in"]'
+            "i_login_link": '//XCUIElementTypeOther[@name=" Log in"]',
+            "i_email_input": '(//XCUIElementTypeOther[@name="Email "])[2]/XCUIElementTypeTextField',
+            "i_password_input": '//XCUIElementTypeOther[@name="Password"]/XCUIElementTypeSecureTextField',
+            "i_login_btn": '//XCUIElementTypeOther[@name="Log in"]',
+            "i_allow_notif": '//XCUIElementTypeButton[@name="Allow"]',
+            "i_tooltip_1": '(//XCUIElementTypeOther[@name="Next"])[2]',
+            "i_tooltip_2": '(//XCUIElementTypeOther[@name="Done"])[2]'
 
         }
 
@@ -75,13 +78,13 @@ class LoginPage:
             if self.is_ios():
                 email_input = self.find_element("i_email_input")
                 email_input.clear()
-                email_input.send_keys("zubair.shahid+11660@mavrictech.com")
+                email_input.send_keys("zubair.shahid+1200095@mavrictech.com")
                 return True
 
             # Check for Android specific elements
             elif self.is_android():
                 email_input = self.find_element("email_input")
-                email_input.send_keys("zubair.shahid+11660@mavrictech.com")
+                email_input.send_keys("zubair.shahid+1200095@mavrictech.com")
                 return True
 
             # If neither iOS nor Android elements are found, raise an exception

@@ -1,0 +1,29 @@
+<TestResults>
+    <Test Name="Verify that upon tapping login link user should navigate to login screen">
+        <Status>Fail</Status>
+    </Test>
+    <Test Name="Verify that upon tapping login link user should navigate to login screen">
+        <Status>Pass</Status>
+    </Test>
+    <Test Name="Verify that user should able to enter email successfully ">
+        <Status>Pass</Status>
+    </Test>
+    <Test Name="Verify that user should able to enter password successfully">
+        <Status>Pass</Status>
+    </Test>
+    <Test Name="Verify that the user is able to complete a successful login">
+        <Status>Pass</Status>
+    </Test>
+    <Test Name="Verify that upon tapping login link user should navigate to login screen">
+        <Status>Pass</Status>
+    </Test>
+    <Test Name="Verify that user should able to enter email successfully ">
+        <Status>Pass</Status>
+    </Test>
+    <Test Name="Verify that user should able to enter password successfully">
+        <Status>Pass</Status>
+    </Test>
+    <Test Name="Verify that the user is able to complete a successful login">
+        <Status>Pass</Status>
+    </Test>
+</TestResults>

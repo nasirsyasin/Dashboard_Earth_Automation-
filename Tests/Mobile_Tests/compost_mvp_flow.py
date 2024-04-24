@@ -1,10 +1,12 @@
+import time
+
 import pytest
 import csv
 from Pages.Mobile_pages.compost_page.MVPCompostPage import MVPCompostPage
 
 
 @pytest.mark.csv
-def compost_mvp_screens():
+def test_compost_mvp_screens():
     mvp_c = MVPCompostPage()
     if mvp_c.mvp_compost_btn():
         mvp_get_started_btn_status = 'Pass'
@@ -16,41 +18,49 @@ def compost_mvp_screens():
             if mvp_c.fork_2_yes_arrow():
                 fork_2_yes_arrow_status = 'Pass'
                 log_test_result("Verify that fork_2_yes_arrow is tapped ", fork_2_yes_arrow_status)
-
+                time.sleep(5)
                 if mvp_c.fork_back_arrow_1():
                     fork_back_arrow_1_status = 'Pass'
                     log_test_result("Verify that fork_back_arrow_1 is tapped ",
                                     fork_back_arrow_1_status)
+                    time.sleep(5)
                     if mvp_c.fork_back_arrow_2():
                         fork_back_arrow_2_status = 'Pass'
                         log_test_result("Verify that fork_back_arrow_2 is tapped ", fork_back_arrow_2_status)
-
+                        time.sleep(5)
                         if mvp_c.fork_1_no_btn():
                             fork_1_no_btn_status = 'Pass'
                             log_test_result("Verify that fork_1_no_btn is tapped ",
                                             fork_1_no_btn_status)
+                            time.sleep(5)
                             if mvp_c.fork_2_no_arrow():
                                 fork_2_no_arrow_status = 'Pass'
                                 log_test_result("Verify that fork_2_no_arrow is tapped ", fork_2_no_arrow_status)
+                                time.sleep(5)
                                 if mvp_c.fork_3_no_arrow():
                                     fork_3_no_arrow_status = 'Pass'
                                     log_test_result("Verify that fork_3_no_arrow is tapped ", fork_3_no_arrow_status)
+                                    time.sleep(5)
                                     if mvp_c.fork_4_no_open_dropdown():
                                         fork_4_no_open_dropdown_status = 'Pass'
                                         log_test_result("Verify that fork_4_no_open_dropdown is tapped ",
                                                         fork_4_no_open_dropdown_status)
+                                        time.sleep(5)
                                         if mvp_c.fork_4_no_closed_dropdown():
                                             fork_4_no_closed_dropdown_status = 'Pass'
                                             log_test_result("Verify that fork_4_no_closed_dropdown is tapped ",
                                                             fork_4_no_closed_dropdown_status)
+                                            time.sleep(5)
                                             if mvp_c.fork_4_no_arrow():
                                                 fork_4_no_arrow_status = 'Pass'
                                                 log_test_result("Verify that fork_4_no_arrow is tapped ",
                                                                 fork_4_no_arrow_status)
-                                                if mvp_c.compost_done_tooltip():
+                                                time.sleep(5)
+                                                if mvp_c.compost_action_btn():
                                                     compost_done_tooltip_status = 'Pass'
-                                                    log_test_result("Verify that compost_done_tooltip is tapped ",
+                                                    log_test_result("Verify that compost_action_btn is tapped ",
                                                                     compost_done_tooltip_status)
+                                                    time.sleep(5)
                                                     if mvp_c.complete_compost_action():
                                                         complete_compost_action_status = 'Pass'
                                                         log_test_result(
@@ -59,11 +69,11 @@ def compost_mvp_screens():
                                                     else:
                                                         complete_compost_action_status = 'Fail'
                                                         log_test_result(
-                                                            "Verify that complete_compost_action is tapped ",
+                                                            "Verify that compost_action_btn is tapped ",
                                                             complete_compost_action_status)
                                                 else:
                                                     compost_done_tooltip_status = 'Fail'
-                                                    log_test_result("Verify that compost_done_tooltip is tapped ",
+                                                    log_test_result("Verify that compost_action_btn is tapped ",
                                                                     compost_done_tooltip_status)
                                             else:
                                                 fork_4_no_arrow_status = 'Fail'
@@ -114,7 +124,7 @@ def compost_mvp_screens():
 
 
 def log_test_result(test_name, status):
-    csv_file = "Results/Compost_MVP_Screens.csv"
+    csv_file = "/Users/mac/Documents/Python_Projects/DBE_Project/Results/Compost_MVP_Screens.csv"
     csv_headers = ["Compost MVP Tests Steps", "Status"]
     csv_rows = [{"Compost MVP Tests Steps": test_name, "Status": status}]  # Wrapping rows in a list of dictionaries
 
