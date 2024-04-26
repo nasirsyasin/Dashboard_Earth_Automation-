@@ -31,32 +31,33 @@ class TrackAction:
         return WebDriverWait(self.driver, 100).until(
             EC.presence_of_element_located((By.XPATH, self.xpath_map[element_name])))
 
-    # def allow_notif(self):
-    #     try:
-    #         self.find_element("notif_allow").click()
-    #         return True
-    #     except Exception as e:
-    #         print(f"Exception occurred: {e}")
-    #         return False
-    # time.sleep(3)
-    #
-    # def tooltip_1_nxt(self):
-    #     try:
-    #         self.find_element("tooltip_1_nxt_btn").click()
-    #         return True
-    #     except Exception as e:
-    #         print(f"Exception occurred: {e}")
-    #         return False
-    #
-    # time.sleep(3)
-    #
-    # def tooltip_2_done(self):
-    #     try:
-    #         self.find_element("tooltip_2_done").click()
-    #         return True
-    #     except Exception as e:
-    #         print(f"Exception occurred: {e}")
-    #         return False
+    def allow_notif(self):
+        try:
+            self.find_element("notif_allow").click()
+            return True
+        except Exception as e:
+            print(f"Exception occurred: {e}")
+            return False
+
+    time.sleep(3)
+
+    def tooltip_1_nxt(self):
+        try:
+            self.find_element("tooltip_1_nxt_btn").click()
+            return True
+        except Exception as e:
+            print(f"Exception occurred: {e}")
+            return False
+
+    time.sleep(3)
+
+    def tooltip_2_done(self):
+        try:
+            self.find_element("tooltip_2_done").click()
+            return True
+        except Exception as e:
+            print(f"Exception occurred: {e}")
+            return False
 
     time.sleep(3)
 
