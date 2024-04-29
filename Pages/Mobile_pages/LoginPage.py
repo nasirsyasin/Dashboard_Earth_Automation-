@@ -78,13 +78,13 @@ class LoginPage:
             if self.is_ios():
                 email_input = self.find_element("i_email_input")
                 email_input.clear()
-                email_input.send_keys("zubair.shahid+1200095@mavrictech.com")
+                email_input.send_keys("zubair.shahid+1200087@mavrictech.com")
                 return True
 
             # Check for Android specific elements
             elif self.is_android():
                 email_input = self.find_element("email_input")
-                email_input.send_keys("zubair.shahid+1200095@mavrictech.com")
+                email_input.send_keys("zubair.shahid+1200087@mavrictech.com")
                 return True
 
             # If neither iOS nor Android elements are found, raise an exception
@@ -144,8 +144,3 @@ class LoginPage:
     def is_android(self):
         platform_name = self.driver.desired_capabilities['platformName']
         return platform_name.lower() == 'android'
-
-
-if __name__ == "__main__":
-    pytest.main()
-    pytest.login_link()

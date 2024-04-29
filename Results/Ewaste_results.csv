@@ -42,3 +42,36 @@ Verify that ewaste_map_details_cross should be tapped successful,Pass
 Verify that ewaste_photo_cap_btn should be tapped successful,Pass
 Verify that ewaste_camera_btn should be tapped successful,Pass
 Verify that ewaste_camera_permission should be tapped successful,Fail
+Verify that Ewaste action button should be tapped successfully,Fail
+Verify that Ewaste action button should be tapped successfully,Pass
+Verify that Ewaste NO button should be tapped successfully ,Pass
+Verify that Ewaste NO flow arrow  should be tapped successfully,Pass
+Verify that Ewaste action button should be tapped again,Pass
+Verify that ewaste_yes_btn should be tapped successful,Pass
+Verify that ewaste_yes_arrow should be tapped successful,Pass
+Verify that ewaste_map_link should be tapped successful,Pass
+Verify that ewaste_map_details_cross should be tapped successful,Pass
+Verify that ewaste_photo_cap_btn should be tapped successful,Pass
+Verify that cam_plus_btn should be tapped successful,Pass
+Verify that ewaste_camera_btn should be tapped successful,Pass
+Verify that ewaste_camera_permission should be tapped successful,Pass
+Verify that ewaste_camera_capture should be tapped successful,Pass
+Verify that save_ok_photo should be tapped successful,Pass
+Verify that verify_complete_btn should be tapped successful,Pass
+Verify that completed_action_btn should be tapped successful,Pass
+Verify that Ewaste action button should be tapped successfully,Pass
+Verify that Ewaste NO button should be tapped successfully ,Pass
+Verify that Ewaste NO flow arrow  should be tapped successfully,Pass
+Verify that Ewaste action button should be tapped again,Pass
+Verify that ewaste_yes_btn should be tapped successful,Pass
+Verify that ewaste_yes_arrow should be tapped successful,Pass
+Verify that ewaste_map_link should be tapped successful,Pass
+Verify that ewaste_map_details_cross should be tapped successful,Pass
+Verify that ewaste_photo_cap_btn should be tapped successful,Pass
+Verify that cam_plus_btn should be tapped successful,Pass
+Verify that ewaste_camera_btn should be tapped successful,Pass
+Verify that ewaste_camera_permission should be tapped successful,Pass
+Verify that ewaste_camera_capture should be tapped successful,Pass
+Verify that save_ok_photo should be tapped successful,Pass
+Verify that verify_complete_btn should be tapped successful,Pass
+Verify that completed_action_btn should be tapped successful,Pass

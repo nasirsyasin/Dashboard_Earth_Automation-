@@ -44,6 +44,7 @@ class EwastePage:
             "save_ok_photo": '//android.widget.Button[@content-desc="OK"]/android.view.ViewGroup',
             "verify_complete_btn": '//android.view.ViewGroup[@content-desc="Verify and complete.."]/android.widget.TextView',
             "completed_action_btn": '//android.view.ViewGroup[@content-desc="Complete Action"]',
+            "ewaste_cam_plus_btn": '//android.view.ViewGroup[@content-desc=""]/android.widget.TextView'
 
         }
 
@@ -142,9 +143,9 @@ class EwastePage:
             print(f"Exception occurred: {e}")
             return False
 
-    def ewaste_cam_btn(self):
+    def ewaste_cam_plus_btn(self):
         try:
-            self.find_element("ewaste_photo_upload_btn").click()
+            self.find_element("ewaste_cam_plus_btn").click()
             return True
         except Exception as e:
             print(f"Exception occurred: {e}")
@@ -205,3 +206,26 @@ class EwastePage:
     def is_android(self):
         platform_name = self.driver.desired_capabilities['platformName']
         return platform_name.lower() == 'android'
+
+
+if __name__ == "__main__":
+    pytest.main()
+    v = EwastePage()
+    # v.ewaste_action_btn()
+    # v.ewaste_no_btn()
+    # v.ewaste_no_arrow()
+    # v.ewaste_action_btn_not_sure()
+    # # v.ewaste_not_sure_btn()
+    # # v.ewaste_not_sure_back_arrow()
+    # v.ewaste_yes_btn()
+    # v.ewaste_yes_arrow()
+    # v.ewaste_map_link()
+    # v.ewaste_map_details_cross()
+    # v.ewaste_photo_cap_btn()
+    # v.ewaste_cam_plus_btn()
+    # v.ewaste_camera_btn()
+    # v.ewaste_camera_permission()
+    # v.ewaste_camera_capture()
+    # v.save_ok_photo()
+    # v.verify_complete_btn()
+    # v.completed_action_btn()

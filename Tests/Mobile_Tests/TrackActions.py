@@ -7,18 +7,22 @@ import csv
 from TestExecutionManager import TestExecutionManager, customize_test_step_results
 
 
-@pytest.mark.csv
-def test_TrackAction():
-    ta = TrackAction()
-    if ta.allow_notif():
-        allow_notif_status = 'Pass'
-        # test_case_key = "DT-T255"  # Assuming test case key is constant for this example custom_test_step_results =
-        # customize_test_step_results(test_case_key=test_case_key) test_manager.make_post_request_with_results(
-        # test_case_key=test_case_key, status_name=allow_notif_status, test_step_results=custom_test_step_results
-        # )
-        log_test_result("Verify that allow_notif button should be tapped",
-                        allow_notif_status)
-        time.sleep(5)
+class TrackActions:
+    _instance = None
+
+    def __new__(cls, *args, **kwargs):
+        if not cls._instance:
+            cls._instance = super(TrackActions, cls).__new__(cls, *args, **kwargs)
+            cls._instance._initialize()
+        return cls._instance
+
+    def _initialize(self):
+        pass
+
+    @pytest.mark.csv
+    def test_TrackAction(self):
+        ta = TrackAction()
+        time.sleep(10)
         if ta.tooltip_1_nxt():
             tooltip_1_nxt_status = 'Pass'
             # test_case_key = "DT-T255"  # Assuming test case key is constant for this example
@@ -80,15 +84,6 @@ def test_TrackAction():
             #                                             )
             log_test_result("Verify that  tooltip_1_nxt button should be tapped again",
                             tooltip_1_nxt_status)
-    else:
-        allow_notif_status = 'Fail'
-        # test_case_key = "DT-T255"  # Assuming test case key is constant for this example
-        # custom_test_step_results = customize_test_step_results(test_case_key=test_case_key)
-        # test_manager.make_post_request_with_results(test_case_key=test_case_key, status_name=allow_notif_status,
-        #                                             test_step_results=custom_test_step_results
-        #                                             )
-        log_test_result("Verify that  allow_notif button should be tapped again",
-                        allow_notif_status)
 
 
 test_manager = TestExecutionManager()
@@ -108,6 +103,7 @@ def log_test_result(test_name, status):
 
         writer.writerows(csv_rows)
 
-
-if __name__ == "__main__":
-    pytest.main()
+# if __name__ == "__main__":
+#     pytest.main()
+#     run = TrackActions()
+#     run.test_TrackAction()

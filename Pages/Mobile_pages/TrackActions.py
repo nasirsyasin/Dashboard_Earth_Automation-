@@ -1,6 +1,5 @@
 import time
 
-import pytest
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -42,7 +41,9 @@ class TrackAction:
     time.sleep(3)
 
     def tooltip_1_nxt(self):
+        # tooltip_nxt = TouchAction(self.driver)
         try:
+            # tooltip_nxt.tap(x=746, y=701).perform()
             self.find_element("tooltip_1_nxt_btn").click()
             return True
         except Exception as e:
@@ -76,3 +77,10 @@ class TrackAction:
     def is_android(self):
         platform_name = self.driver.desired_capabilities['platformName']
         return platform_name.lower() == 'android'
+
+# if __name__ == "__main__":
+#     pytest.main()
+#     run = TrackAction()
+#     run.tooltip_1_nxt()
+#     run.tooltip_2_done()
+#     run.trackActions()
