@@ -1,7 +1,5 @@
-import time
-
 import pytest
-from Pages.Mobile_pages.TrackActions import TrackAction
+from Pages.Mobile_pages.AllowNotify import AllowNotify
 import csv
 
 
@@ -19,7 +17,7 @@ class Allow_Notify:
 
     @pytest.mark.csv
     def test_Allow_notify(self):
-        ta = TrackAction()
+        ta = AllowNotify()
         if ta.allow_notif():
             allow_notif_status = 'Pass'
             # test_case_key = "DT-T255"  # Assuming test case key is constant for this example custom_test_step_results =
@@ -28,6 +26,7 @@ class Allow_Notify:
             # )
             log_test_result("Verify that allow_notif button should be tapped",
                             allow_notif_status)
+            ta.app_refresh()
         else:
             allow_notif_status = 'Fail'
             # test_case_key = "DT-T255"  # Assuming test case key is constant for this example

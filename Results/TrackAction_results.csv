@@ -1,25 +1,8 @@
 Tests Summary,Status
-Verify that allow_notif button should be tapped successfully,Fail
-Verify that allow_notif button should be tapped successfully,Fail
-Verify that allow_notif button should be tapped successfully,Fail
-Verify that tooltip_1_nxt button should be tapped successfully ,Pass
-Verify that tooltip_2_done button  should be tapped successfully,Pass
-Verify that trackActions button should be tapped again,Pass
-Verify that allow_notif button should be tapped successfully,Fail
-Verify that allow_notif button should be tapped successfully,Pass
-Verify that tooltip_1_nxt button should be tapped successfully ,Pass
-Verify that trackActions button should be tapped again,Pass
-Verify that trackActions button should be tapped again,Pass
-Verify that trackActions button should be tapped again,Pass
-Verify that trackActions button should be tapped again,Pass
 Verify that  allow_notif button should be tapped again,Fail
 Verify that tooltip_1_nxt button should be tapped,Pass
-Verify that tooltip_2_done button should be tapped,Pass
-Verify that trackActions button should be tapped ,Pass
-Verify that tooltip_1_nxt button should be tapped,Pass
-Verify that tooltip_2_done button should be tapped,Pass
-Verify that trackActions button should be tapped ,Pass
 Verify that allow_notif button should be tapped,Pass
-Verify that tooltip_1_nxt button should be tapped,Pass
-Verify that tooltip_2_done button should be tapped,Pass
+Verify that  allow_notif button should be tapped again,Fail
+Verify that trackActions button should be tapped ,Pass
+Verify that trackActions button should be tapped ,Pass
 Verify that trackActions button should be tapped ,Pass

@@ -52,7 +52,7 @@ class TestExecutionManager:
         # Call the method to make authenticated POST request with custom test results
         self.requester.make_post_request_with_results(project_key="DT",
                                                       test_case_key=test_case_key,
-                                                      test_cycle_key="DT-R52",
+                                                      test_cycle_key="DT-R69",
                                                       status_name=status_name,
                                                       test_results=test_step_results)
 
