@@ -1,12 +1,10 @@
-Event Name
-MVP_homescreen_your_tab_clicked
-MVP_homescreen_log_action_clicked
-clicked_compost_action
-MVP_no_flow_arrow_3_clicked
-MVP_yes_flow_arrow_1_clicked
-MVP_no_flow_arrow_2_clicked
-MVP_no_flow_arrow_1_clicked
-MVP_no_flow_get_started_1_expanded
-MVP_question_screen_no_clicked
-MVP_question_screen_yes_clicked
-onboarding_waitlist_page_viewed
+Event Name,test_case_key
+MVP_homescreen_your_tab_clicked,DT-T51
+MVP_no_flow_arrow_3_clicked,DT-T38
+MVP_yes_flow_arrow_1_clicked,DT-T42
+MVP_no_flow_arrow_2_clicked,DT-T39
+MVP_no_flow_arrow_1_clicked,DT-T40
+MVP_no_flow_get_started_1_expanded,DT-T47
+MVP_question_screen_no_clicked,DT-T24
+MVP_question_screen_yes_clicked,DT-T22
+onboarding_waitlist_page_viewed,DT-T81

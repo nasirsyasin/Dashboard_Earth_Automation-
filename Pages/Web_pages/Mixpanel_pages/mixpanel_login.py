@@ -20,14 +20,15 @@ def test_login_to_mixpanel():
         login_link_btn.click()
         time.sleep(5)
         # Switch to the iframe using its relative XPath
-        # iframe_xpath = '//div[@class="g_id_signin"]/div/iframe'
-        # iframe = WebDriverWait(driver, 10).until(
-        #     EC.presence_of_element_located((By.XPATH, iframe_xpath))
-        # )
-        # driver.switch_to.frame(iframe)
+        iframe_xpath = '//div[@class="g_id_signin"]/div/iframe'
+        iframe = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, iframe_xpath))
+        )
+        # print("iframe : " + iframe)
+        driver.switch_to.frame(iframe)
         # Wait for the "Sign in with Google" button to be present on the page
-        google_btn_xpath = "//div[@id='container']/div/div[2]/span[@id='button-label']"
-        google_btn = WebDriverWait(driver, 100).until(
+        google_btn_xpath = "//div[@id='container']/div/div[2]"
+        google_btn = WebDriverWait(driver, 30).until(
             EC.presence_of_element_located((By.XPATH, google_btn_xpath))
         )
         # print("Parent window title: " + driver.title)

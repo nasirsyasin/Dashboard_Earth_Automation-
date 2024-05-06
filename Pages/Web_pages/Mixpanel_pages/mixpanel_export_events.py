@@ -2,9 +2,13 @@ import csv
 from bs4 import BeautifulSoup
 import pytest
 import time
-from selenium.webdriver.common.by import By
-from mixpanel_web_access import driver_access_mixpanel
 
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+
+from mixpanel_web_access import driver_access_mixpanel
+from selenium.webdriver.support import expected_conditions as EC
 from Utility.web_driver_base_setup import loadCookies
 
 driver = driver_access_mixpanel()
@@ -23,27 +27,35 @@ def test_mixpanel():
                                                      'div > div.mp-section-title-container > div.mp-section-actions > mp-button')
         filter_btn.click()
 
-        time.sleep(5)
-        add_filter_shadow_root = driver.find_element(By.XPATH,
-                                                     '//mp-query-entry-section[@elref="filterSection"]').shadow_root
+        # time.sleep(5)
+        # add_filter_shadow_root = driver.find_element(By.XPATH,
+        #                                              '//mp-query-entry-section[@elref="filterSection"]').shadow_root
+        # print(add_filter_shadow_root)
 
         time.sleep(5)
-        add_filter_btn = add_filter_shadow_root.find_element(By.CSS_SELECTOR,
-                                                             'div > div.mp-query-entry-section-footer.is-empty > div > div > mp-button')
+        # add_filter_btn = add_filter_shadow_root.find_element(By.CSS_SELECTOR,
+        # 'div > div.mp-query-entry-section-footer.is-empty > div > div > mp-button')
+        add_filter_btn = driver.find_element(By.XPATH, '//div[@elref="filterSection"]/div/div/div/mp-button['
+                                                       '@class="new-entry-button"]')
+
+        # add_filter_btn = driver.execute_script(
+        #     "return document.querySelector('#mixpanel-application > inspector-app > mp-sidenav-layout > "
+        #     "div.inspector-app-query-builder-container > mp-query-builder-xzmlyo > div > div > div > mp-section > div "
+        #     "> div > div > div.mp-query-entry-section-footer.is-empty > div > div > mp-button')"
+        # )
         add_filter_btn.click()
 
         time.sleep(5)
         # Execute JavaScript to find the username field
-        search_email = driver.execute_script(
-            "return document.querySelector('#mixpanel-application > inspector-app > mp-sidenav-layout > "
-            "div.inspector-app-query-builder-container > mp-query-builder > div > div > mp-section > div > "
-            "mp-query-entry-section').shadowRoot.querySelector('div > div.mp-query-entry-section-body > div > "
-            "div.mp-query-entry-body > div > mp-query-block').shadowRoot.querySelector('div > "
-            "div.mp-query-block-selector.mp-query-editing > div.mp-query-drop-menu-container.for-filter-menu > "
-            "mp-drop-menu > mp-filter-menu').shadowRoot.querySelector('div > "
-            "mp-properties-menu').shadowRoot.querySelector('div > div.search-wrapper > "
-            "mp-input').shadowRoot.querySelector('div > div > input')"
-        )
+        # search_email = driver.execute_script(
+        #     "return document.querySelector('#mixpanel-application > inspector-app > mp-sidenav-layout > "
+        #     "div.inspector-app-query-builder-container > mp-query-builder-xzmlyo > div > div > div > mp-section > div "
+        #     "> div > div > div.mp-query-entry-section-body > div > div.mp-query-entry-body > div > div:nth-child(1) > "
+        #     "div > div.mp-query-block-selector.mp-query-editing > div.mp-query-drop-menu-container.for-filter-menu > "
+        #     "mp-drop-menu > div > div > div > div > div.search-wrapper > mp-input').shadowRoot.querySelector('div > "
+        #     "div > div.mp-input-wrapper > input')"
+        # )
+        search_email = driver.find_element(By.XPATH, '//mp-input[@elref="searchInput"]')
         search_email.send_keys("Email")
 
         # Set value for the search field
@@ -51,54 +63,80 @@ def test_mixpanel():
         time.sleep(5)
 
         # Execute JavaScript to find the email field
-        email_filter = driver.execute_script(
-            "return document.querySelector('#mixpanel-application > inspector-app > mp-sidenav-layout > "
-            "div.inspector-app-query-builder-container > mp-query-builder > div > div > mp-section > div > "
-            "mp-query-entry-section').shadowRoot.querySelector('div > div.mp-query-entry-section-body > div > "
-            "div.mp-query-entry-body > div > mp-query-block').shadowRoot.querySelector('div > "
-            "div.mp-query-block-selector.mp-query-editing > div.mp-query-drop-menu-container.for-filter-menu > "
-            "mp-drop-menu > mp-filter-menu').shadowRoot.querySelector('div > "
-            "mp-properties-menu').shadowRoot.querySelector('div > div.mp-properties-menu-wrapper > div > "
-            "mp-items-menu').shadowRoot.querySelector('div > div > div.section-container.has-header > ul > "
-            "div:nth-child(1)')"
-        )
+        # email_filter = driver.execute_script(
+        #     "return document.querySelector('#mixpanel-application > inspector-app > mp-sidenav-layout > "
+        #     "div.inspector-app-query-builder-container > mp-query-builder-xzmlyo > div > div > div > mp-section > div "
+        #     "> div > div > div.mp-query-entry-section-body > div > div.mp-query-entry-body > div > div:nth-child(1) > "
+        #     "div > div.mp-query-block-selector.mp-query-editing > div.mp-query-drop-menu-container.for-filter-menu > "
+        #     "mp-drop-menu > div > div > div > div > div.mp-properties-menu-wrapper > div > "
+        #     "mp-items-menu').shadowRoot.querySelector('div > div > div:nth-child(1) > ul > div:nth-child(1) > li > "
+        #     "div.option-label-section.sublabel-theme-breadcrumb.has-sublabel > div > div > span.label')"
+        # )
         # driver.execute_script("arguments[0].click()", event_filter)
+        email_filter_shadow_root = driver.find_element(By.XPATH,
+                                                       '//mp-items-menu[@elref="mainSelectionMenu"]').shadow_root
+        email_filter = email_filter_shadow_root.find_element(By.CSS_SELECTOR,
+                                                             'div > div > div:nth-child(1) > ul > div:nth-child(1) > li > div.option-label-section.sublabel-theme-breadcrumb.has-sublabel > div > div > span.label')
         email_filter.click()
         time.sleep(5)
-        enter_email_filter = driver.execute_script(
-            "return document.querySelector('#mixpanel-application > inspector-app > mp-sidenav-layout > "
-            "div.inspector-app-query-builder-container > mp-query-builder > div > div > mp-section > div > "
-            "mp-query-entry-section').shadowRoot.querySelector('div > div.mp-query-entry-section-body > div > "
-            "div.mp-query-entry-body > div > div.mp-query-entry-filter-parts > div > mp-select.is-placeholder.is-open "
-            "> mp-property-values-screen').shadowRoot.querySelector('div > div > div.pvs-filter-fixed-subsection > "
-            "mp-input').shadowRoot.querySelector('div > div > input')"
-        )
-        # driver.execute_script("arguments[0].click()", event_filter)
-        enter_email_filter.send_keys("zubair.shahid+80015@mavrictech.com")
 
+        # element = WebDriverWait(driver, 10).until(
+        #     EC.visibility_of_element_located((By.CSS_SELECTOR,
+        #                                       '#mixpanel-application > inspector-app > mp-sidenav-layout > div.inspector-app-query-builder-container > mp-query-builder-t0sarg > div > div > div > mp-section > div > div > div > div.mp-query-entry-section-body > div > div.mp-query-entry-body > div > div.mp-query-entry-filter-parts > div > mp-select.filter-value-select.is-placeholder.is-open > mp-property-values-screen'))
+        # )
+
+        # enter_email_filter = driver.execute_script(
+        #     'return document.querySelector("#mixpanel-application > inspector-app > mp-sidenav-layout > '
+        #     'div.inspector-app-query-builder-container > mp-query-builder-xzmlyo > div > div > div > mp-section > div '
+        #     '> div > div > div.mp-query-entry-section-body > div > div.mp-query-entry-body > div > '
+        #     'div.mp-query-entry-filter-parts > div > mp-select.filter-value-select.is-open > '
+        #     'mp-property-values-screen").shadowRoot.querySelector("div > div > div.pvs-filter-fixed-subsection > '
+        #     'mp-input").shadowRoot.querySelector("div > div > div.mp-input-wrapper > input")'
+        # )
+
+        filter_shadow_r = driver.find_element(By.XPATH, '//mp-property-values-screen[@elref="filterValue"]').shadow_root
+        element_within_first_shadow_root = filter_shadow_r.find_element(By.CSS_SELECTOR,
+                                                                        'div > div > div.pvs-filter-fixed-subsection > mp-input')
+        second_shadow_root = element_within_first_shadow_root.shadow_root
+        enter_email_filter = second_shadow_root.find_element(By.CSS_SELECTOR,
+                                                             'div > div > div.mp-input-wrapper > input')
+
+        enter_email_filter.send_keys('zubair.shahid+473938@mavrictech.com')
         time.sleep(10)
-        select_email_filter = driver.execute_script(
-            "return document.querySelector('#mixpanel-application > inspector-app > mp-sidenav-layout > "
-            "div.inspector-app-query-builder-container > mp-query-builder > div > div > mp-section > div > "
-            "mp-query-entry-section').shadowRoot.querySelector('div > div.mp-query-entry-section-body > div > "
-            "div.mp-query-entry-body > div > div.mp-query-entry-filter-parts > div > mp-select.is-placeholder.is-open "
-            "> mp-property-values-screen').shadowRoot.querySelector('div > div > div.pvs-filter-property-values > "
-            "mp-items-menu').shadowRoot.querySelector('div > div > div:nth-child(3) > ul > div')"
-        )
-        # driver.execute_script("arguments[0].click()", event_filter)
+
+        element2_within_first_shadow_root = filter_shadow_r.find_element(By.CSS_SELECTOR,
+                                                                         'div > div > div.pvs-filter-property-values > mp-items-menu')
+        second2_shadow_root = element2_within_first_shadow_root.shadow_root
+        select_email_filter = second2_shadow_root.find_element(By.CSS_SELECTOR,
+                                                               'div > div > div:nth-child(3) > ul > div > li > mp-checkbox')
+
         select_email_filter.click()
-        time.sleep(10)
-        add_email_filter = driver.execute_script(
-            "return document.querySelector('#mixpanel-application > inspector-app > mp-sidenav-layout > "
-            "div.inspector-app-query-builder-container > mp-query-builder > div > div > mp-section > div > "
-            "mp-query-entry-section').shadowRoot.querySelector('div > div.mp-query-entry-section-body > div > "
-            "div.mp-query-entry-body > div > div.mp-query-entry-filter-parts > div > mp-select.is-placeholder.is-open "
-            "> mp-property-values-screen').shadowRoot.querySelector('div > mp-button-bar').shadowRoot.querySelector("
-            "'div')"
-        )
+        # select_email_filter = driver.execute_script(
+        #     "return document.querySelector('#mixpanel-application > inspector-app > mp-sidenav-layout > "
+        #     "div.inspector-app-query-builder-container > mp-query-builder > div > div > mp-section > div > "
+        #     "mp-query-entry-section').shadowRoot.querySelector('div > div.mp-query-entry-section-body > div > "
+        #     "div.mp-query-entry-body > div > div.mp-query-entry-filter-parts > div > mp-select.is-placeholder.is-open "
+        #     "> mp-property-values-screen').shadowRoot.querySelector('div > div > div.pvs-filter-property-values > "
+        #     "mp-items-menu').shadowRoot.querySelector('div > div > div:nth-child(3) > ul > div')"
+        # )
+        # # driver.execute_script("arguments[0].click()", event_filter)
+        # select_email_filter.click()
+        time.sleep(5)
+        # add_email_filter = driver.execute_script(
+        #     "return document.querySelector('#mixpanel-application > inspector-app > mp-sidenav-layout > "
+        #     "div.inspector-app-query-builder-container > mp-query-builder > div > div > mp-section > div > "
+        #     "mp-query-entry-section').shadowRoot.querySelector('div > div.mp-query-entry-section-body > div > "
+        #     "div.mp-query-entry-body > div > div.mp-query-entry-filter-parts > div > mp-select.is-placeholder.is-open "
+        #     "> mp-property-values-screen').shadowRoot.querySelector('div > mp-button-bar').shadowRoot.querySelector("
+        #     "'div')"
+        # )
         # driver.execute_script("arguments[0].click()", event_filter)
+        add_email_filter_shadow_r = driver.find_element(By.XPATH,
+                                                        '//mp-property-values-screen[@elref="filterValue"]').shadow_root
+        add_email_filter = add_email_filter_shadow_r.find_element(By.CSS_SELECTOR,
+                                                                  'div > mp-button-bar')
         add_email_filter.click()
-        time.sleep(10)
+        time.sleep(5)
 
         shadow_root_mp_table = driver.find_element(By.XPATH, '//mp-table').shadow_root
 

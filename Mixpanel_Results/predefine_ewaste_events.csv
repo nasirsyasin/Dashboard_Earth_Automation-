@@ -1,10 +1,8 @@
-Event Name
-closed_ewaste_nice_work_modal
-photo_submitted_ewaste
-clicked_upload_ewaste_screen
-clicked_x_map_ewaste
-clicked_map_ewaste
-clicked_next_ewaste_LAonboarding
-clicked_ewaste_fork_yes
-clicked_ewaste_fork_no
-clicked_ewaste_action
+Event Name,test_case_key
+photo_submitted_ewaste,DT-T449
+clicked_upload_ewaste_screen,DT-T448
+clicked_x_map_ewaste,DT-T447
+clicked_map_ewaste,DT-T446
+clicked_next_ewaste_LAonboarding,DT-T444
+clicked_ewaste_fork_yes,DT-T442
+clicked_ewaste_fork_no,DT-T443

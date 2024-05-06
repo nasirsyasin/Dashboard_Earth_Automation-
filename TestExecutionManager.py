@@ -16,7 +16,20 @@ def get_number_of_steps_for_test_case(test_case_key):
         "DT-T345": 13,
         "DT-T346": 18,
         "DT-T384": 8,
-        "DT-T381": 4
+        "DT-T381": 4,
+        "DT-T51": 1,
+        "DT-T38": 1,
+        "DT-T42": 1,
+        "DT-T39": 1,
+        "DT-T40": 1,
+        "DT-T47": 1,
+        "DT-T24": 1,
+        "DT-T22": 1,
+        "DT-T81": 1
+
+
+
+
         # Add more mappings as needed
     }
 

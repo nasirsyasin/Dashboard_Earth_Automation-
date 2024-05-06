@@ -1,10 +1,8 @@
-Event Name,Status
-closed_ewaste_nice_work_modal,Passed
-photo_submitted_ewaste,Passed
-clicked_upload_ewaste_screen,Passed
-clicked_x_map_ewaste,Passed
-clicked_map_ewaste,Passed
-clicked_next_ewaste_LAonboarding,Passed
-clicked_ewaste_fork_yes,Passed
-clicked_ewaste_fork_no,Passed
-clicked_ewaste_action,Passed
+Event Name,Status,test_case_key
+photo_submitted_ewaste,Pass,DT-T449
+clicked_upload_ewaste_screen,Pass,DT-T448
+clicked_x_map_ewaste,Fail,DT-T447
+clicked_map_ewaste,Fail,DT-T446
+clicked_next_ewaste_LAonboarding,Pass,DT-T444
+clicked_ewaste_fork_yes,Pass,DT-T442
+clicked_ewaste_fork_no,Fail,DT-T443

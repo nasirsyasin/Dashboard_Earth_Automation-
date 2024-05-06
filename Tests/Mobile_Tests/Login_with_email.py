@@ -118,3 +118,9 @@ def log_test_result(test_name, status):
             writer.writeheader()
 
         writer.writerows(csv_rows)
+
+
+if __name__ == "__main__":
+    pytest.main()
+    run = Login_with_email()
+    run.test_login_with_email()

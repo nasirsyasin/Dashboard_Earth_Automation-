@@ -1,20 +1,27 @@
 Event Name
-closed_ewaste_nice_work_modal
+MVP_nice_work_modal_left
 photo_submitted_ewaste
-session_started
-App Session
-session_ended
+logged_climate_action
 clicked_upload_ewaste_screen
-clicked_x_map_ewaste
-clicked_map_ewaste
 clicked_next_ewaste_LAonboarding
 clicked_ewaste_fork_yes
-clicked_ewaste_fork_no
-clicked_ewaste_action
-app_open
-clicked_tooltip_3
+action_tapped
+App Session
+enrolled_in_MVP
+MVP_yes_flow_arrow_2_clicked
+MVP_yes_flow_arrow_1_clicked
+MVP_question_screen_yes_clicked
+actions_viewed
 clicked_tooltip_2
 clicked_tooltip_1
 notification_settings
 onboarding_account_created
 Identify
+clicked_next_app_overview_screen
+clicked_next_climate_anxiety_screen
+clicked_next_venn_diagram_screen
+get_started_clicked
+install
+app_open
+session_started
+First App Open
