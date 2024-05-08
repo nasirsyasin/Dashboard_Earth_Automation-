@@ -1,10 +1,10 @@
 Event Name,Status,test_case_key
 MVP_homescreen_your_tab_clicked,Fail,DT-T51
-MVP_no_flow_arrow_3_clicked,Fail,DT-T38
+MVP_no_flow_arrow_3_clicked,Pass,DT-T38
 MVP_yes_flow_arrow_1_clicked,Pass,DT-T42
-MVP_no_flow_arrow_2_clicked,Fail,DT-T39
-MVP_no_flow_arrow_1_clicked,Fail,DT-T40
-MVP_no_flow_get_started_1_expanded,Fail,DT-T47
-MVP_question_screen_no_clicked,Fail,DT-T24
+MVP_no_flow_arrow_2_clicked,Pass,DT-T39
+MVP_no_flow_arrow_1_clicked,Pass,DT-T40
+MVP_no_flow_get_started_1_expanded,Pass,DT-T47
+MVP_question_screen_no_clicked,Pass,DT-T24
 MVP_question_screen_yes_clicked,Pass,DT-T22
 onboarding_waitlist_page_viewed,Fail,DT-T81

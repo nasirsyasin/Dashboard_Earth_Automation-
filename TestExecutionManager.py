@@ -25,7 +25,14 @@ def get_number_of_steps_for_test_case(test_case_key):
         "DT-T47": 1,
         "DT-T24": 1,
         "DT-T22": 1,
-        "DT-T81": 1
+        "DT-T81": 1,
+        "DT-T449": 1,
+        "DT-T448": 1,
+        "DT-T447": 1,
+        "DT-T446": 1,
+        "DT-T444": 1,
+        "DT-T442": 1,
+        "DT-T443": 1
 
 
 
@@ -68,16 +75,3 @@ class TestExecutionManager:
                                                       test_cycle_key="DT-R69",
                                                       status_name=status_name,
                                                       test_results=test_step_results)
-
-# # Example usage
-# if __name__ == "__main__":
-#     # Create an instance of TestExecutionManager
-#     test_manager = TestExecutionManager()
-#
-#     # Define custom test step results
-#     custom_test_step_results = customize_test_step_results(test_case_key="DT-T1")
-#
-#     # Call the method to make authenticated POST request with custom test results
-#     test_manager.make_post_request_with_results(test_case_key="DT-T1", status_name="Not Executed",
-#                                                 test_step_results=custom_test_step_results
-#                                                 )

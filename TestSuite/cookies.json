@@ -1,7 +1,7 @@
 [
   {
     "domain": ".mixpanel.com",
-    "expiry": 1746644730,
+    "expiry": 1746648783,
     "httpOnly": false,
     "name": "mp_account_id",
     "path": "/",
@@ -11,7 +11,7 @@
   },
   {
     "domain": "mixpanel.com",
-    "expiry": 1716318330,
+    "expiry": 1716322383,
     "httpOnly": false,
     "name": "mp_persistence",
     "path": "/",
@@ -21,7 +21,7 @@
   },
   {
     "domain": ".mixpanel.com",
-    "expiry": 1746644730,
+    "expiry": 1746648783,
     "httpOnly": false,
     "name": "mp_distinct_id",
     "path": "/",
@@ -31,7 +31,7 @@
   },
   {
     "domain": ".mixpanel.com",
-    "expiry": 1746212727,
+    "expiry": 1746216780,
     "httpOnly": false,
     "name": "mp__origin",
     "path": "/",
@@ -41,27 +41,27 @@
   },
   {
     "domain": ".mixpanel.com",
-    "expiry": 1749668690,
+    "expiry": 1749672744,
     "httpOnly": false,
     "name": "_ga",
     "path": "/",
     "sameSite": "Lax",
     "secure": false,
-    "value": "GA1.1.674599229.1715108643"
+    "value": "GA1.2.1054329307.1715112691"
   },
   {
     "domain": ".mixpanel.com",
-    "expiry": 1746644643,
+    "expiry": 1746648691,
     "httpOnly": false,
     "name": "_clck",
     "path": "/",
     "sameSite": "Lax",
     "secure": false,
-    "value": "i4p3cv%7C2%7Cflk%7C0%7C1588"
+    "value": "rxdlsq%7C2%7Cflk%7C0%7C1588"
   },
   {
     "domain": "mixpanel.com",
-    "expiry": 1716318331,
+    "expiry": 1716322394,
     "httpOnly": false,
     "name": "mp_user",
     "path": "/",
@@ -71,17 +71,17 @@
   },
   {
     "domain": ".mixpanel.com",
-    "expiry": 1715195090,
+    "expiry": 1715199144,
     "httpOnly": false,
     "name": "_gid",
     "path": "/",
     "sameSite": "Lax",
     "secure": false,
-    "value": "GA1.2.529241998.1715108643"
+    "value": "GA1.2.1061002201.1715112691"
   },
   {
     "domain": "mixpanel.com",
-    "expiry": 1730660726,
+    "expiry": 1730664780,
     "httpOnly": false,
     "name": "g_state",
     "path": "/",
@@ -91,27 +91,27 @@
   },
   {
     "domain": ".mixpanel.com",
-    "expiry": 1715195089,
+    "expiry": 1715199143,
     "httpOnly": false,
     "name": "_uetsid",
     "path": "/",
     "sameSite": "Lax",
     "secure": false,
-    "value": "9149c4300ca411efaee3e710364afdaa"
+    "value": "fdf6f6e00cad11ef97829b066a20bd4c"
   },
   {
     "domain": ".mixpanel.com",
-    "expiry": 1715195090,
+    "expiry": 1715199144,
     "httpOnly": false,
     "name": "_clsk",
     "path": "/",
     "sameSite": "Lax",
     "secure": false,
-    "value": "gpfmfn%7C1715108690382%7C3%7C1%7Cz.clarity.ms%2Fcollect"
+    "value": "oz2jxr%7C1715112744476%7C3%7C1%7Cz.clarity.ms%2Fcollect"
   },
   {
     "domain": ".mixpanel.com",
-    "expiry": 1746212727,
+    "expiry": 1746216780,
     "httpOnly": false,
     "name": "mp__origin_referrer",
     "path": "/",
@@ -121,73 +121,83 @@
   },
   {
     "domain": ".mixpanel.com",
-    "expiry": 1748804689,
+    "expiry": 1748808743,
     "httpOnly": false,
     "name": "_uetvid",
     "path": "/",
     "sameSite": "Lax",
     "secure": false,
-    "value": "9149e1400ca411efa63115887658f68b"
+    "value": "fdf72ca00cad11efad8b3957430a0354"
   },
   {
     "domain": ".mixpanel.com",
-    "expiry": 1749668727,
+    "expiry": 1749672781,
     "httpOnly": false,
     "name": "_ga_6NLLN3BJ6F",
     "path": "/",
     "sameSite": "Lax",
     "secure": false,
-    "value": "GS1.1.1715108642.1.1.1715108727.60.0.405739350"
+    "value": "GS1.1.1715112690.1.1.1715112781.60.0.360508384"
   },
   {
     "domain": ".mixpanel.com",
-    "expiry": 1716318326,
+    "expiry": 1716322379,
     "httpOnly": true,
     "name": "sessionid",
     "path": "/",
     "sameSite": "Lax",
     "secure": true,
-    "value": "enqqz579tokatxa9bd34eh07nn0ulwqy"
+    "value": "3uhlqukg2bihkdgzdh7sfif7g0ki7k9e"
   },
   {
     "domain": ".mixpanel.com",
-    "expiry": 1722884689,
+    "expiry": 1722888743,
     "httpOnly": false,
     "name": "_rdt_uuid",
     "path": "/",
     "sameSite": "Strict",
     "secure": true,
-    "value": "1715108643073.615078ee-dcfc-4d20-958c-b76c9b66d335"
+    "value": "1715112690801.22bae85e-70f4-4a0c-beb1-b47fb8ba771a"
   },
   {
     "domain": "mixpanel.com",
-    "expiry": 1749668642,
+    "expiry": 1746562380,
     "httpOnly": false,
-    "name": "_gd_visitor",
+    "name": "csrftoken",
     "path": "/",
-    "sameSite": "None",
+    "sameSite": "Lax",
     "secure": true,
-    "value": "5e1312c6-9595-4314-8616-e9d629992c7b"
-  },
-  {
-    "domain": "mixpanel.com",
-    "expiry": 1715108809,
-    "httpOnly": false,
-    "name": "_hjUserAttributesHash",
-    "path": "/",
-    "sameSite": "None",
-    "secure": true,
-    "value": "1c0bb95dfb535806c581c0e3262348e1"
+    "value": "uoG3x9OWgGTZ8mfMyRQKnMLJAClrvdX2N7PZLnlqY91Tv9SKYOUlsPBXe8oCg9rh"
   },
   {
     "domain": ".mixpanel.com",
-    "expiry": 1715110442,
+    "expiry": 1722888743,
     "httpOnly": false,
-    "name": "_hjSession_2879837",
+    "name": "_fbp",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "fb.1.1715112690139.753050348"
+  },
+  {
+    "domain": ".mixpanel.com",
+    "expiry": 1746648743,
+    "httpOnly": false,
+    "name": "_hjSessionUser_2879837",
     "path": "/",
     "sameSite": "None",
     "secure": true,
-    "value": "eyJpZCI6ImMyMDZjNGE1LTY0NzgtNGZhMC1hYWE0LWE3YzA3YWZmNTM5YiIsImMiOjE3MTUxMDg2NDI3NzQsInMiOjEsInIiOjEsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjoxLCJzcCI6MX0="
+    "value": "eyJpZCI6ImQ5MzEwMDJjLTg5NzItNTVhMi1iMWJkLTA1MTIxMDQyZGZmZSIsImNyZWF0ZWQiOjE3MTUxMTI2OTA1NzUsImV4aXN0aW5nIjp0cnVlfQ=="
+  },
+  {
+    "domain": ".mixpanel.com",
+    "expiry": 1722888691,
+    "httpOnly": false,
+    "name": "_gcl_au",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "1.1.807285839.1715112691"
   },
   {
     "domain": "mixpanel.com",
@@ -199,53 +209,33 @@
     "value": "true"
   },
   {
-    "domain": "mixpanel.com",
-    "expiry": 1746558327,
-    "httpOnly": false,
-    "name": "csrftoken",
-    "path": "/",
-    "sameSite": "Lax",
-    "secure": true,
-    "value": "k597ighV1s6tSbZnYEOe2rkPbyi35m8R8pDJBL3zjLQWzPaa5WBSBlPNQZuklDul"
-  },
-  {
     "domain": ".mixpanel.com",
-    "expiry": 1746644689,
+    "expiry": 1715114490,
     "httpOnly": false,
-    "name": "_hjSessionUser_2879837",
+    "name": "_hjSession_2879837",
     "path": "/",
     "sameSite": "None",
     "secure": true,
-    "value": "eyJpZCI6ImI1ZDg4MjFhLTQ0MmMtNTA1Mi04NWExLTA5MjM1YThiZDcxMiIsImNyZWF0ZWQiOjE3MTUxMDg2NDI3NzIsImV4aXN0aW5nIjp0cnVlfQ=="
-  },
-  {
-    "domain": ".mixpanel.com",
-    "expiry": 1722884689,
-    "httpOnly": false,
-    "name": "_fbp",
-    "path": "/",
-    "sameSite": "Lax",
-    "secure": false,
-    "value": "fb.1.1715108642325.1916886521"
+    "value": "eyJpZCI6IjY2ZjAxN2JlLTAyZWQtNDU0YS1iYjIxLTFlYTA1ODRmNGFmZiIsImMiOjE3MTUxMTI2OTA1NzcsInMiOjAsInIiOjAsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjoxLCJzcCI6MH0="
   },
   {
     "domain": "mixpanel.com",
-    "expiry": 1715123042,
+    "expiry": 1715127090,
     "httpOnly": false,
     "name": "_gd_session",
     "path": "/",
     "sameSite": "None",
     "secure": true,
-    "value": "292ad15f-7c45-4841-8edd-22b4d8cb3c04"
+    "value": "f4be62d6-e198-445c-83a6-3a7a7ba369bb"
   },
   {
-    "domain": ".mixpanel.com",
-    "expiry": 1722884643,
+    "domain": "mixpanel.com",
+    "expiry": 1749672690,
     "httpOnly": false,
-    "name": "_gcl_au",
+    "name": "_gd_visitor",
     "path": "/",
-    "sameSite": "Lax",
-    "secure": false,
-    "value": "1.1.1288224479.1715108643"
+    "sameSite": "None",
+    "secure": true,
+    "value": "986b2fcc-d82b-407e-89ac-f82fe3baacb4"
   }
 ]

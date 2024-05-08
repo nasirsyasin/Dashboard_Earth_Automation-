@@ -190,6 +190,7 @@ def log_test_result(test_name, status):
 
         writer.writerows(csv_rows)
 
-
-if __name__ == "__main__":
-    pytest.main()
+# if __name__ == "__main__":
+#     pytest.main()
+#     exe_signup = Sign_up_with_email()
+#     exe_signup.test_signup_with_email()

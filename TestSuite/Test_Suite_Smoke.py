@@ -1,5 +1,6 @@
 import pytest
 
+from Pages.Web_pages.Mixpanel_pages.MixpanelAnalyticsExecution import MixpanelAnalyticsExecution
 from Tests.Mobile_Tests.Allow_Notify import Allow_Notify
 from Tests.Mobile_Tests.Login_with_email import Login_with_email
 from Tests.Mobile_Tests.Ewaste_flow import Ewaste_flow
@@ -85,6 +86,45 @@ class test_suite:
             log_test_result("Verify that Ewaste events should be verified successfully",
                             Execute_ewaste_events_verif_status)
 
+    @pytest.mark.csv
+    def mixpanel_export(self):
+        mxp_ana = MixpanelAnalyticsExecution()
+        if mxp_ana.export_events():
+            Execute_mxp_events_verif_status = "Pass"
+            log_test_result("Verify that Mixpanel Analytics Executed successfully",
+                            Execute_mxp_events_verif_status)
+
+        else:
+            Execute_mxp_events_verif_status = "Fail"
+            log_test_result("Verify that Mixpanel Analytics Executed successfully",
+                            Execute_mxp_events_verif_status)
+
+    @pytest.mark.csv
+    def compost_verify(self):
+        mxp_cmp = MixpanelAnalyticsExecution()
+        if mxp_cmp.compost_result():
+            Execute_mxp_events_verif_status = "Pass"
+            log_test_result("Verify that Mixpanel Compost Analytics Executed successfully",
+                            Execute_mxp_events_verif_status)
+
+        else:
+            Execute_mxp_events_verif_status = "Fail"
+            log_test_result("Verify that Mixpanel Compost Analytics Executed successfully",
+                            Execute_mxp_events_verif_status)
+
+    @pytest.mark.csv
+    def ewaste_verify(self):
+        mxp_ew = MixpanelAnalyticsExecution()
+        if mxp_ew.ewaste_result():
+            Execute_mxp_events_verif_status = "Pass"
+            log_test_result("Verify that Mixpanel Ewaste Analytics Executed successfully",
+                            Execute_mxp_events_verif_status)
+
+        else:
+            Execute_mxp_events_verif_status = "Fail"
+            log_test_result("Verify that Mixpanel Ewaste Analytics Executed successfully",
+                            Execute_mxp_events_verif_status)
+
 
 def log_test_result(test_name, status):
     csv_file = "/Users/mac/Documents/Python_Projects/DBE_Project/Results/Test_suit_results.csv"
@@ -108,3 +148,6 @@ if __name__ == "__main__":
     run.test_trackAction()
     run.test_compost()
     run.test_ewaste()
+    run.mixpanel_export()
+    run.compost_verify()
+    run.ewaste_verify()

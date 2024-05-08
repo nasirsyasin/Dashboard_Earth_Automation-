@@ -5,4 +5,4 @@ clicked_x_map_ewaste,Fail,DT-T447
 clicked_map_ewaste,Fail,DT-T446
 clicked_next_ewaste_LAonboarding,Pass,DT-T444
 clicked_ewaste_fork_yes,Pass,DT-T442
-clicked_ewaste_fork_no,Fail,DT-T443
+clicked_ewaste_fork_no,Pass,DT-T443

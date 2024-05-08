@@ -78,13 +78,13 @@ class LoginPage:
             if self.is_ios():
                 email_input = self.find_element("i_email_input")
                 email_input.clear()
-                email_input.send_keys("zubair.shahid+1200066@mavrictech.com")
+                email_input.send_keys("zubair.shahid+1200073@mavrictech.com")
                 return True
 
             # Check for Android specific elements
             elif self.is_android():
                 email_input = self.find_element("email_input")
-                email_input.send_keys("zubair.shahid+1200066@mavrictech.com")
+                email_input.send_keys("zubair.shahid+1200073@mavrictech.com")
                 return True
 
             # If neither iOS nor Android elements are found, raise an exception
