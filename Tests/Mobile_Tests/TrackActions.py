@@ -1,9 +1,9 @@
 import time
 
 import pytest
-from Pages.Mobile_pages.TrackActions import TrackAction
 import csv
 
+from Pages.Mobile_pages.TrackActions import TrackAction
 from TestExecutionManager import TestExecutionManager, customize_test_step_results
 
 
@@ -44,48 +44,51 @@ class TrackActions:
                                                         )
             log_test_result("Verify that  trackActions button should be tapped again",
                             trackActions_status)
-        # time.sleep(3)
-        # if ta.tooltip_1_nxt():
-        #     tooltip_1_nxt_status = 'Pass'
-        #     # test_case_key = "DT-T255"  # Assuming test case key is constant for this example
-        #     # custom_test_step_results = customize_test_step_results(test_case_key=test_case_key)
-        #     # test_manager.make_post_request_with_results(test_case_key=test_case_key, status_name=tooltip_1_nxt_status,
-        #     #                                             test_step_results=custom_test_step_results
-        #     #                                             )
-        #     log_test_result("Verify that tooltip_1_nxt button should be tapped",
-        #                     tooltip_1_nxt_status)
-        #     time.sleep(5)
-        #     if ta.tooltip_2_done():
-        #         tooltip_2_done_status = 'Pass'
-        #         test_case_key = "DT-T272"  # Assuming test case key is constant for this example
-        #         custom_test_step_results = customize_test_step_results(test_case_key=test_case_key)
-        #         test_manager.make_post_request_with_results(test_case_key=test_case_key,
-        #                                                     status_name=tooltip_2_done_status,
-        #                                                     test_step_results=custom_test_step_results
-        #                                                     )
-        #         log_test_result("Verify that tooltip_2_done button should be tapped",
-        #                         tooltip_2_done_status)
-        #         time.sleep(5)
-        #
-        #     else:
-        #         tooltip_2_done_status = 'Fail'
-        #         test_case_key = "DT-T272"  # Assuming test case key is constant for this example
-        #         custom_test_step_results = customize_test_step_results(test_case_key=test_case_key)
-        #         test_manager.make_post_request_with_results(test_case_key=test_case_key,
-        #                                                     status_name=tooltip_2_done_status,
-        #                                                     test_step_results=custom_test_step_results
-        #                                                     )
-        #         log_test_result("Verify that  tooltip_2_done button should be tapped again",
-        #                         tooltip_2_done_status)
-        # else:
-        #     tooltip_1_nxt_status = 'Fail'
-        #     # test_case_key = "DT-T255"  # Assuming test case key is constant for this example
-        #     # custom_test_step_results = customize_test_step_results(test_case_key=test_case_key)
-        #     # test_manager.make_post_request_with_results(test_case_key=test_case_key, status_name=tooltip_1_nxt_status,
-        #     #                                             test_step_results=custom_test_step_results
-        #     #                                             )
-        #     log_test_result("Verify that  tooltip_1_nxt button should be tapped again",
-        #                     tooltip_1_nxt_status)
+
+    @pytest.mark.csv
+    def test_tooltip(self):
+        ta = TrackAction()
+        if ta.tooltip_1_nxt():
+            tooltip_1_nxt_status = 'Pass'
+            # test_case_key = "DT-T255"  # Assuming test case key is constant for this example
+            # custom_test_step_results = customize_test_step_results(test_case_key=test_case_key)
+            # test_manager.make_post_request_with_results(test_case_key=test_case_key, status_name=tooltip_1_nxt_status,
+            #                                             test_step_results=custom_test_step_results
+            #                                             )
+            log_test_result("Verify that tooltip_1_nxt button should be tapped",
+                            tooltip_1_nxt_status)
+            time.sleep(5)
+            if ta.tooltip_2_done():
+                tooltip_2_done_status = 'Pass'
+                test_case_key = "DT-T272"  # Assuming test case key is constant for this example
+                custom_test_step_results = customize_test_step_results(test_case_key=test_case_key)
+                test_manager.make_post_request_with_results(test_case_key=test_case_key,
+                                                            status_name=tooltip_2_done_status,
+                                                            test_step_results=custom_test_step_results
+                                                            )
+                log_test_result("Verify that tooltip_2_done button should be tapped",
+                                tooltip_2_done_status)
+                time.sleep(5)
+
+            else:
+                tooltip_2_done_status = 'Fail'
+                test_case_key = "DT-T272"  # Assuming test case key is constant for this example
+                custom_test_step_results = customize_test_step_results(test_case_key=test_case_key)
+                test_manager.make_post_request_with_results(test_case_key=test_case_key,
+                                                            status_name=tooltip_2_done_status,
+                                                            test_step_results=custom_test_step_results
+                                                            )
+                log_test_result("Verify that  tooltip_2_done button should be tapped again",
+                                tooltip_2_done_status)
+        else:
+            tooltip_1_nxt_status = 'Fail'
+            # test_case_key = "DT-T255"  # Assuming test case key is constant for this example
+            # custom_test_step_results = customize_test_step_results(test_case_key=test_case_key)
+            # test_manager.make_post_request_with_results(test_case_key=test_case_key, status_name=tooltip_1_nxt_status,
+            #                                             test_step_results=custom_test_step_results
+            #                                             )
+            log_test_result("Verify that  tooltip_1_nxt button should be tapped again",
+                            tooltip_1_nxt_status)
 
 
 test_manager = TestExecutionManager()

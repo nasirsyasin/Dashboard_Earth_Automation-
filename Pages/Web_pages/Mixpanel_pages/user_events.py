@@ -2,7 +2,7 @@ import time
 
 import pytest
 from selenium.webdriver.common.by import By
-from Pages.Web_pages.mixpanel_web_access import driver_access_mixpanel
+from Pages import driver_access_mixpanel
 from Utility.web_driver_base_setup import loadCookies
 
 driver = driver_access_mixpanel()

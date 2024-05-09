@@ -12,3 +12,6 @@ Verify that trackActions button should be tapped ,Pass
 Verify that trackActions button should be tapped ,Pass
 Verify that trackActions button should be tapped ,Pass
 Verify that trackActions button should be tapped ,Pass
+Verify that  trackActions button should be tapped again,Fail
+Verify that i_allow_app button should be tapped,Pass
+Verify that i_allow_app button should be tapped,Pass

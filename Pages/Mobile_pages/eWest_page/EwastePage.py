@@ -44,7 +44,8 @@ class EwastePage:
             "save_ok_photo": '//android.widget.Button[@content-desc="OK"]/android.view.ViewGroup',
             "verify_complete_btn": '//android.view.ViewGroup[@content-desc="Verify and complete.."]/android.widget.TextView',
             "completed_action_btn": '//android.view.ViewGroup[@content-desc="Complete Action"]',
-            "ewaste_cam_plus_btn": '//android.view.ViewGroup[@content-desc=""]/android.widget.TextView'
+            "ewaste_cam_plus_btn": '//android.view.ViewGroup[@content-desc=""]/android.widget.TextView',
+            # iOS Xpath
 
         }
 
@@ -57,32 +58,76 @@ class EwastePage:
 
     def ewaste_action_btn(self):
         try:
-            self.find_element("ewaste_action_btn").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_ewaste_action_btn").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("ewaste_action_btn").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("ewaste_action_btn element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
     def ewaste_no_btn(self):
         try:
-            self.find_element("ewaste_no_btn").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_ewaste_no_btn").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("ewaste_no_btn").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("ewaste_no_btn element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
     def ewaste_no_arrow(self):
         try:
-            self.find_element("ewaste_no_arrow").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_ewaste_no_arrow").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("ewaste_no_arrow").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("ewaste_no_arrow element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
     def ewaste_action_btn_not_sure(self):
         try:
-            self.find_element("ewaste_action_btn").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_ewaste_action_btn").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("ewaste_action_btn").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("ewaste_action_btn element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
@@ -105,96 +150,228 @@ class EwastePage:
 
     def ewaste_yes_btn(self):
         try:
-            self.find_element("ewaste_yes_btn").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_ewaste_yes_btn").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("ewaste_yes_btn").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("ewaste_yes_btn element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
     def ewaste_yes_arrow(self):
         try:
-            self.find_element("ewaste_yes_arrow").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_ewaste_yes_arrow").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("ewaste_yes_arrow").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("ewaste_yes_arrow element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
     def ewaste_map_link(self):
         try:
-            self.find_element("ewaste_map_link").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_ewaste_map_link").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("ewaste_map_link").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("ewaste_map_link element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
     def ewaste_map_details_cross(self):
         try:
-            self.find_element("ewaste_map_details_cross").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_ewaste_map_details_cross").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("ewaste_map_details_cross").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("ewaste_map_details_cross element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
     def ewaste_photo_cap_btn(self):
         try:
-            self.find_element("ewaste_photo_upload_btn").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_ewaste_photo_upload_btn").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("ewaste_photo_upload_btn").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("ewaste_photo_upload_btn element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
     def ewaste_cam_plus_btn(self):
         try:
-            self.find_element("ewaste_cam_plus_btn").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_ewaste_cam_plus_btn").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("ewaste_cam_plus_btn").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("ewaste_cam_plus_btn element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
     def ewaste_camera_btn(self):
         try:
-            self.find_element("ewaste_camera_btn").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_ewaste_camera_btn").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("ewaste_camera_btn").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("ewaste_camera_btn element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
     def ewaste_camera_permission(self):
         try:
-            self.find_element("ewaste_camera_permission").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_ewaste_camera_permission").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("ewaste_camera_permission").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("ewaste_camera_permission element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
     def ewaste_camera_capture(self):
         try:
-            self.find_element("ewaste_camera_capture").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_ewaste_camera_capture").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("ewaste_camera_capture").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("ewaste_camera_capture element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
     def save_ok_photo(self):
         try:
-            self.find_element("save_ok_photo").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_save_ok_photo").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("save_ok_photo").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("save_ok_photo element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
     def verify_complete_btn(self):
         try:
-            self.find_element("verify_complete_btn").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_verify_complete_btn").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("verify_complete_btn").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("verify_complete_btn element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
     def completed_action_btn(self):
         try:
-            self.find_element("completed_action_btn").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_completed_action_btn").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("completed_action_btn").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("completed_action_btn element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
@@ -206,26 +383,3 @@ class EwastePage:
     def is_android(self):
         platform_name = self.driver.desired_capabilities['platformName']
         return platform_name.lower() == 'android'
-
-
-if __name__ == "__main__":
-    pytest.main()
-    v = EwastePage()
-    # v.ewaste_action_btn()
-    # v.ewaste_no_btn()
-    # v.ewaste_no_arrow()
-    # v.ewaste_action_btn_not_sure()
-    # # v.ewaste_not_sure_btn()
-    # # v.ewaste_not_sure_back_arrow()
-    # v.ewaste_yes_btn()
-    # v.ewaste_yes_arrow()
-    # v.ewaste_map_link()
-    # v.ewaste_map_details_cross()
-    # v.ewaste_photo_cap_btn()
-    # v.ewaste_cam_plus_btn()
-    # v.ewaste_camera_btn()
-    # v.ewaste_camera_permission()
-    # v.ewaste_camera_capture()
-    # v.save_ok_photo()
-    # v.verify_complete_btn()
-    # v.completed_action_btn()

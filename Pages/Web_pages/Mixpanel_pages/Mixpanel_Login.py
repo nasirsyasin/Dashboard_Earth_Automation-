@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Utility.web_driver_base_setup import loadCookies, saveCookies
-from Pages.Web_pages.mixpanel_web_access import driver_access_mixpanel
+from Pages import driver_access_mixpanel
 
 
 class Mixpanel_Login:

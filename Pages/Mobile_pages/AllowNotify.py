@@ -17,7 +17,10 @@ class AllowNotify:
 
     def _initialize(self):
         self.xpath_map = {
-            "notif_allow": '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[1]'
+            "notif_allow": '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[1]',
+            # ios xpaths
+            "i_allow_app": '(//XCUIElementTypeOther[@name="Horizontal scroll bar, 1 page"])[2]',
+            "i_notify_allow": '//XCUIElementTypeButton[@name="Allow"]'
         }
 
     def __init__(self):
@@ -30,6 +33,14 @@ class AllowNotify:
     def allow_notif(self):
         try:
             self.find_element("notif_allow").click()
+            return True
+        except Exception as e:
+            print(f"Exception occurred: {e}")
+            return False
+
+    def i_allow_app(self):
+        try:
+            self.find_element("i_allow_app").click()
             return True
         except Exception as e:
             print(f"Exception occurred: {e}")

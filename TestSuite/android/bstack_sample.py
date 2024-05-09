@@ -1,10 +1,33 @@
 import pytest
-from Tests.Mobile_Tests.Login_with_email import test_login_with_email
+
+from TestSuite.Test_Suite_Smoke import test_suite
 
 
 @pytest.mark.usefixtures('setWebdriver')
 class TestSample:
-    test_login_with_email()
+    _instance = None
+
+    def __new__(cls, *args, **kwargs):
+        if not cls._instance:
+            cls._instance = super(TestSample, cls).__new__(cls, *args, **kwargs)
+            cls._instance._initialize()
+        return cls._instance
+
+    def _initialize(self):
+        pass
+
+    run = test_suite()
+    run.refresh_app()
+    run.test_login()
+    run.test_AllowNotify()
+    run.refresh_app()
+    run.test_tooltips()
+    run.test_trackAction()
+    run.test_compost()
+    run.test_ewaste()
+    run.mixpanel_export()
+    run.compost_verify()
+    run.ewaste_verify()
 
     # def test_example(self):
     #     search_element = WebDriverWait(self.driver, 30).until(

@@ -2,6 +2,7 @@ import pytest
 
 from Pages.Web_pages.Mixpanel_pages.MixpanelAnalyticsExecution import MixpanelAnalyticsExecution
 from Tests.Mobile_Tests.Allow_Notify import Allow_Notify
+from Tests.Mobile_Tests.AppRefresh import AppRefresh
 from Tests.Mobile_Tests.Login_with_email import Login_with_email
 from Tests.Mobile_Tests.Ewaste_flow import Ewaste_flow
 import csv
@@ -125,6 +126,21 @@ class test_suite:
             log_test_result("Verify that Mixpanel Ewaste Analytics Executed successfully",
                             Execute_mxp_events_verif_status)
 
+    @pytest.mark.csv
+    def refresh_app(self):
+        mxp_ew = AppRefresh()
+        mxp_ew.app_refresh()
+
+    @pytest.mark.csv
+    def i_allow_app(self):
+        i_all = Allow_Notify()
+        i_all.test_i_Allow()
+
+    @pytest.mark.csv
+    def test_tooltips(self):
+        exe_ta = TrackActions()
+        exe_ta.test_tooltip()
+
 
 def log_test_result(test_name, status):
     csv_file = "/Users/mac/Documents/Python_Projects/DBE_Project/Results/Test_suit_results.csv"
@@ -140,14 +156,13 @@ def log_test_result(test_name, status):
 
         writer.writerows(csv_rows)
 
-
-if __name__ == "__main__":
-    pytest.main()
-    run = test_suite()
-    run.test_login()
-    run.test_trackAction()
-    run.test_compost()
-    run.test_ewaste()
-    run.mixpanel_export()
-    run.compost_verify()
-    run.ewaste_verify()
+# if __name__ == "__main__":
+#     pytest.main()
+#     run = test_suite()
+#     run.test_login()
+#     run.test_trackAction()
+#     run.test_compost()
+#     run.test_ewaste()
+#     run.mixpanel_export()
+#     run.compost_verify()
+#     run.ewaste_verify()

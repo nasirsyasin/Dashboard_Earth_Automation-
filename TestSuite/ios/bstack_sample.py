@@ -1,21 +1,29 @@
 import pytest
-from Tests.Mobile_Tests.Login_with_email import test_login_with_email
+
+from TestSuite.Test_Suite_Smoke import test_suite
 
 
 @pytest.mark.usefixtures('setWebdriver')
 class TestSample:
-    test_login_with_email()
-    # def test_example(self):
-    #     text_button = WebDriverWait(self.driver, 30).until(
-    #         EC.element_to_be_clickable((AppiumBy.ACCESSIBILITY_ID, "Text Button"))
-    #     )
-    #     text_button.click()
-    #     text_input = WebDriverWait(self.driver, 30).until(
-    #         EC.element_to_be_clickable((AppiumBy.ACCESSIBILITY_ID, "Text Input"))
-    #     )
-    #     text_input.send_keys("hello@browserstack.com"+"\n")
-    #     time.sleep(5)
-    #     text_output = WebDriverWait(self.driver, 30).until(
-    #         EC.element_to_be_clickable((AppiumBy.ACCESSIBILITY_ID, "Text Output"))
-    #     )
-    #     assert text_output!=None and text_output.text=="hello@browserstack.com"
+    _instance = None
+
+    def __new__(cls, *args, **kwargs):
+        if not cls._instance:
+            cls._instance = super(TestSample, cls).__new__(cls, *args, **kwargs)
+            cls._instance._initialize()
+        return cls._instance
+
+    def _initialize(self):
+        pass
+
+    run = test_suite()
+    run.i_allow_app()
+    run.test_login()
+    run.test_AllowNotify()
+    run.test_tooltips()
+    run.test_trackAction()
+    run.test_compost()
+    run.test_ewaste()
+    run.mixpanel_export()
+    run.compost_verify()
+    run.ewaste_verify()

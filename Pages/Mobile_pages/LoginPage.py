@@ -25,9 +25,9 @@ class LoginPage:
             "login_btn": '//android.view.ViewGroup[@content-desc="Log in"]',
             # iOS app xpath
             "iOS_allow_popup": '//XCUIElementTypeButton[@name="Allow"]',
-            "i_login_link": '//XCUIElementTypeOther[@name=" Log in"]',
-            "i_email_input": '(//XCUIElementTypeOther[@name="Email "])[2]/XCUIElementTypeTextField',
-            "i_password_input": '//XCUIElementTypeOther[@name="Password"]/XCUIElementTypeSecureTextField',
+            "i_login_link": '//XCUIElementTypeOther[@name="Log in"]',
+            "i_email_input": '(//XCUIElementTypeOther[@name="Enter email "])[2]/XCUIElementTypeTextField',
+            "i_password_input": '//XCUIElementTypeOther[@name="Enter password"]/XCUIElementTypeSecureTextField',
             "i_login_btn": '//XCUIElementTypeOther[@name="Log in"]',
             "i_allow_notif": '//XCUIElementTypeButton[@name="Allow"]',
             "i_tooltip_1": '(//XCUIElementTypeOther[@name="Next"])[2]',

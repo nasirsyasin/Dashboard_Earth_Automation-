@@ -1,7 +1,8 @@
 import time
 import pytest
-from Pages.Mobile_pages.eWest_page.EwastePage import EwastePage
 import csv
+
+from Pages.Mobile_pages.eWest_page.EwastePage import EwastePage
 from TestExecutionManager import TestExecutionManager, customize_test_step_results
 
 

@@ -50,3 +50,7 @@ Verify that Ewaste events should be verified successfully,Fail
 Verify that Mixpanel Analytics Executed successfully,Fail
 Verify that Mixpanel Compost Analytics Executed successfully,Fail
 Verify that Mixpanel Ewaste Analytics Executed successfully,Fail
+Verify that user should be login successfully,Fail
+Verify that tooltips and track action button should be performed successfully,Fail
+Verify that compost_mvp should be performed successfully,Fail
+Verify that user should be login successfully,Fail

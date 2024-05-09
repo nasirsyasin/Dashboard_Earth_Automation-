@@ -20,7 +20,13 @@ class TrackAction:
         self.xpath_map = {
             "TrackAction_btn": '//android.view.ViewGroup[@content-desc="Track Actions"]',
             "tooltip_1_nxt_btn": '//android.view.ViewGroup[@content-desc="Next"]',
-            "tooltip_2_done": '//android.view.ViewGroup[@content-desc="Done"]'
+            "tooltip_2_done": '//android.view.ViewGroup[@content-desc="Done"]',
+
+            # iOS Xpath
+            "i_TrackAction_btn": '//android.view.ViewGroup[@content-desc="Track Actions"]',
+            "i_tooltip_nxt1": '(//XCUIElementTypeOther[@name="Next"])[2]',
+            "i_tooltip_done2": '(//XCUIElementTypeOther[@name="Done"])[2]'
+
         }
 
     def __init__(self):
@@ -31,11 +37,20 @@ class TrackAction:
             EC.presence_of_element_located((By.XPATH, self.xpath_map[element_name])))
 
     def tooltip_1_nxt(self):
-        # tooltip_nxt = TouchAction(self.driver)
         try:
-            # tooltip_nxt.tap(x=746, y=701).perform()
-            self.find_element("tooltip_1_nxt_btn").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_tooltip_nxt1").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("tooltip_1_nxt_btn").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("i_tooltip_nxt1 element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
@@ -44,8 +59,19 @@ class TrackAction:
 
     def tooltip_2_done(self):
         try:
-            self.find_element("tooltip_2_done").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_tooltip_done2").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("tooltip_2_done").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("tooltip_2_done element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
@@ -54,8 +80,19 @@ class TrackAction:
 
     def trackActions(self):
         try:
-            self.find_element("TrackAction_btn").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_TrackAction_btn").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("TrackAction_btn").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("Track Action element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
@@ -69,9 +106,3 @@ class TrackAction:
         return platform_name.lower() == 'android'
 
 
-# if __name__ == "__main__":
-#     pytest.main()
-#     run = TrackAction()
-#     run.app_refresh()
-#     run.tooltip_2_done()
-#     run.trackActions()

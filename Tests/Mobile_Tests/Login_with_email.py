@@ -1,6 +1,7 @@
 import csv
 import time
 import pytest
+
 from Pages.Mobile_pages.LoginPage import LoginPage
 from TestExecutionManager import TestExecutionManager, customize_test_step_results
 
@@ -119,8 +120,7 @@ def log_test_result(test_name, status):
 
         writer.writerows(csv_rows)
 
-
-if __name__ == "__main__":
-    pytest.main()
-    run = Login_with_email()
-    run.test_login_with_email()
+# if __name__ == "__main__":
+#     pytest.main()
+#     run = Login_with_email()
+#     run.test_login_with_email()

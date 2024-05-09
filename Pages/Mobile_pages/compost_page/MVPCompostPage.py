@@ -75,44 +75,102 @@ class MVPCompostPage:
 
     def mvp_compost_btn(self):
         try:
-            self.find_element("compost_btn").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_compost_btn").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("compost_btn").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("compost_btn element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
     def fork_1_yes_btn(self):
         try:
-            self.find_element("fork_1_yes_btn").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_fork_1_yes_btn").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("fork_1_yes_btn").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("fork_1_yes_btn element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
+
     def fork_2_yes_arrow(self):
         try:
-            self.find_element("fork_2_yes_arrow").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_fork_2_yes_arrow").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("fork_2_yes_arrow").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("fork_2_yes_arrow element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
+
 
     time.sleep(3)
 
     def fork_back_arrow_1(self):
         try:
-            self.find_element("back_arrow_1").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_back_arrow_1").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("back_arrow_1").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("back_arrow_1 element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
+
 
     time.sleep(3)
 
     def fork_back_arrow_2(self):
         try:
-            self.find_element("back_arrow_2").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_back_arrow_2").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("back_arrow_2").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("back_arrow_2 element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
@@ -121,8 +179,19 @@ class MVPCompostPage:
 
     def fork_1_no_btn(self):
         try:
-            self.find_element("fork_1_no_btn").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_fork_1_no_btn").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("fork_1_no_btn").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("fork_1_no_btn element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
@@ -131,8 +200,19 @@ class MVPCompostPage:
 
     def fork_2_no_arrow(self):
         try:
-            self.find_element("fork_2_no_arrow").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_fork_2_no_arrow").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("fork_2_no_arrow").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("fork_2_no_arrow element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
@@ -141,8 +221,19 @@ class MVPCompostPage:
 
     def fork_3_no_arrow(self):
         try:
-            self.find_element("fork_3_no_arrow").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_fork_3_no_arrow").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("fork_3_no_arrow").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("fork_3_no_arrow element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
@@ -151,8 +242,19 @@ class MVPCompostPage:
 
     def fork_4_no_open_dropdown(self):
         try:
-            self.find_element("fork_4_no_dropdown").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_fork_4_no_dropdown").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("fork_4_no_dropdown").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("fork_4_no_dropdown element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
@@ -161,8 +263,19 @@ class MVPCompostPage:
 
     def fork_4_no_closed_dropdown(self):
         try:
-            self.find_element("fork_4_no_dropdown").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_fork_4_no_dropdown").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("fork_4_no_dropdown").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("fork_4_no_dropdown element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
@@ -171,19 +284,38 @@ class MVPCompostPage:
 
     def fork_4_no_arrow(self):
         try:
-            self.find_element("fork_4_no_arrow").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_fork_4_no_arrow").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("fork_4_no_arrow").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("fork_4_no_arrow element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
 
     def compost_action_btn(self):
-        x_coordinate1 = 440
-        y_coordinate2 = 1480
-        compost_done_tooltip = [x_coordinate1, y_coordinate2]
         try:
-            self.find_element("compost_action_btn").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_compost_action_btn").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("compost_action_btn").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("compost_action_btn element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False
@@ -192,8 +324,19 @@ class MVPCompostPage:
 
     def complete_compost_action(self):
         try:
-            self.find_element("complete_compost").click()
-            return True
+            # Check for iOS specific elements
+            if self.is_ios():
+                self.find_element("i_complete_compost").click()
+                return True
+
+            # Check for Android specific elements
+            elif self.is_android():
+                self.find_element("complete_compost").click()
+                return True
+
+            # If neither iOS nor Android elements are found, raise an exception
+            else:
+                raise Exception("complete_compost element not found for any platform.")
         except Exception as e:
             print(f"Exception occurred: {e}")
             return False

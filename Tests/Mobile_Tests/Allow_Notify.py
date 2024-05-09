@@ -1,6 +1,7 @@
 import pytest
-from Pages.Mobile_pages.AllowNotify import AllowNotify
 import csv
+
+from Pages.Mobile_pages.AllowNotify import AllowNotify
 
 
 class Allow_Notify:
@@ -26,7 +27,6 @@ class Allow_Notify:
             # )
             log_test_result("Verify that allow_notif button should be tapped",
                             allow_notif_status)
-            ta.app_refresh()
         else:
             allow_notif_status = 'Fail'
             # test_case_key = "DT-T255"  # Assuming test case key is constant for this example
@@ -37,8 +37,17 @@ class Allow_Notify:
             log_test_result("Verify that  allow_notif button should be tapped again",
                             allow_notif_status)
 
-
-# test_manager = TestExecutionManager()
+    @pytest.mark.csv
+    def test_i_Allow(self):
+        ta = AllowNotify()
+        if ta.i_allow_app():
+            i_allow_app_status = 'Pass'
+            log_test_result("Verify that i_allow_app button should be tapped",
+                            i_allow_app_status)
+        else:
+            i_allow_app_status = 'Fail'
+            log_test_result("Verify that i_allow_app button should be tapped again",
+                            i_allow_app_status)
 
 
 def log_test_result(test_name, status):
