@@ -18,7 +18,8 @@ class TrackAction:
 
     def _initialize(self):
         self.xpath_map = {
-            "TrackAction_btn": '//android.view.ViewGroup[@content-desc="Track Actions"]',
+            # android xpath
+            "TrackAction_btn": '//android.view.ViewGroup[@content-desc="Track an action!"]',
             "tooltip_1_nxt_btn": '//android.view.ViewGroup[@content-desc="Next"]',
             "tooltip_2_done": '//android.view.ViewGroup[@content-desc="Done"]',
 
@@ -98,11 +99,15 @@ class TrackAction:
             return False
 
     def is_ios(self):
-        platform_name = self.driver.desired_capabilities['platformName']
+        platform_name = self.driver.capabilities['platformName']
         return platform_name.lower() == 'ios'
 
     def is_android(self):
-        platform_name = self.driver.desired_capabilities['platformName']
+        platform_name = self.driver.capabilities['platformName']
         return platform_name.lower() == 'android'
 
 
+if __name__ == "__main__":
+    pytest.main()
+    run = TrackAction()
+    run.trackActions()

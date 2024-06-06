@@ -19,10 +19,13 @@ class LoginPage:
 
     def _initialize(self):
         self.xpath_map = {
-            "login_link": '//android.view.ViewGroup[@content-desc="Log in"]/android.widget.TextView',
-            "email_input": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[1]",
-            "password_input": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[2]",
-            "login_btn": '//android.view.ViewGroup[@content-desc="Log in"]',
+            # android xpath
+            "launching_continue_one": '//android.view.ViewGroup[@content-desc="Continue "]',
+            "launching_continue_two": '//android.view.ViewGroup[@content-desc="Continue "]',
+            "login_link": '//android.view.ViewGroup[@content-desc="Sign In"]/android.widget.TextView',
+            "email_input": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[1]",
+            "password_input": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[2]",
+            "login_btn": '//android.view.ViewGroup[@content-desc="Get Started123"]',
             # iOS app xpath
             "iOS_allow_popup": '//XCUIElementTypeButton[@name="Allow"]',
             "i_login_link": '//XCUIElementTypeOther[@name="Log in"]',
@@ -51,6 +54,23 @@ class LoginPage:
     #     except Exception as e:
     #         print(f"Exception occurred: {e}")
     #         return False
+
+    def launching_continue_one(self):
+        try:
+            self.find_element("launching_continue_one").click()
+            return True
+        except Exception as e:
+            print(f"Exception occurred: {e}")
+            return False
+
+    def launching_continue_two(self):
+        try:
+            time.sleep(5)
+            self.find_element("launching_continue_two").click()
+            return True
+        except Exception as e:
+            print(f"Exception occurred: {e}")
+            return False
 
     def login_link(self):
         try:
@@ -138,9 +158,21 @@ class LoginPage:
             return False
 
     def is_ios(self):
-        platform_name = self.driver.desired_capabilities['platformName']
+        platform_name = self.driver.capabilities['platformName']
         return platform_name.lower() == 'ios'
 
     def is_android(self):
-        platform_name = self.driver.desired_capabilities['platformName']
+        # platform_name = self.driver.desired_capabilities['platformName']
+        platform_name = self.driver.capabilities['platformName']
         return platform_name.lower() == 'android'
+
+
+if __name__ == "__main__":
+    pytest.main()
+    run = LoginPage()
+    run.launching_continue_one()
+    run.launching_continue_two()
+    run.login_link()
+    run.email_input()
+    run.password_input()
+    run.login_btn()
