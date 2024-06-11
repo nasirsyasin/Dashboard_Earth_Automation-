@@ -55,8 +55,8 @@ class Ewaste_flow:
                                     ewaste_no_arrow_status)
                     time.sleep(5)
 
-                    if ew.ewaste_action_btn_not_sure():
-                        ewaste_action_btn_not_sure_status = 'Pass'
+                    if ew.ewaste_action_btn():
+                        ewaste_action_btn_status = 'Pass'
                         # test_case_key = "DT-T255"  # Assuming test case key is constant for this example
                         # custom_test_step_results = customize_test_step_results(test_case_key=test_case_key)
                         # test_manager.make_post_request_with_results(test_case_key=test_case_key,
@@ -64,7 +64,7 @@ class Ewaste_flow:
                         #                                             test_step_results=custom_test_step_results
                         #                                             )
                         log_test_result("Verify that Ewaste action button should be tapped again",
-                                        ewaste_action_btn_not_sure_status)
+                                        ewaste_action_btn_status)
                         time.sleep(5)
 
                         if ew.ewaste_yes_btn():
@@ -129,7 +129,6 @@ class Ewaste_flow:
                                             log_test_result(
                                                 "Verify that ewaste_photo_cap_btn should be tapped successful",
                                                 ewaste_photo_cap_btn_status)
-                                            time.sleep(5)
                                             time.sleep(5)
                                             if ew.ewaste_cam_plus_btn():
                                                 ewaste_cam_plus_btn_status = 'Pass'
@@ -389,7 +388,7 @@ class Ewaste_flow:
                                             ewaste_yes_btn_status)
 
                     else:
-                        ewaste_action_btn_not_sure_status = 'Fail'
+                        ewaste_action_btn_status = 'Fail'
                         # test_case_key = "DT-T255"  # Assuming test case key is constant for this example
                         # custom_test_step_results = customize_test_step_results(test_case_key=test_case_key)
                         # test_manager.make_post_request_with_results(test_case_key=test_case_key,
@@ -397,7 +396,7 @@ class Ewaste_flow:
                         #                                             test_step_results=custom_test_step_results
                         #                                             )
                         log_test_result("Verify that Ewaste action button should be tapped again",
-                                        ewaste_action_btn_not_sure_status)
+                                        ewaste_action_btn_status)
                 else:
                     ewaste_no_arrow_status = 'Fail'
                     # test_case_key = "DT-T255"  # Assuming test case key is constant for this example

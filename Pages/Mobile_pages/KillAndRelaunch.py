@@ -1,3 +1,5 @@
+import pytest
+
 from Utility.mobile_driver_setup import AppiumDriverSingleton
 
 
@@ -17,5 +19,15 @@ class KillAndRelaunch:
         self.driver = AppiumDriverSingleton().get_driver
 
     def app_refresh(self):
-        self.driver.close_app()
-        self.driver.launch_app()
+        try:
+            self.driver.close_app()
+            self.driver.launch_app()
+            return True
+        except Exception as e:
+            print(f"Exception occurred: {e}")
+            return False
+
+# if __name__ == "__main__":
+#     pytest.main()
+#     run = KillAndRelaunch()
+#     run.app_refresh()

@@ -32,7 +32,7 @@ class AppiumDriverSingleton:
         appium_server = 'http://localhost:4723/wd/hub'
         try:
             driver = webdriver.Remote(appium_server, options=AppiumOptions().load_capabilities(capabilities))
-            driver.implicitly_wait(100)  # Adjust the wait time as needed
+            driver.implicitly_wait(10)  # Adjust the wait time as needed
             return driver
         except WebDriverException as e:
             print(f"An error occurred while creating the driver: {e}")

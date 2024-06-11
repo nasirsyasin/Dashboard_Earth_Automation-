@@ -1,9 +1,12 @@
+import time
+
 import pytest
 
 from Pages.Web_pages.Mixpanel_pages.MixpanelAnalyticsExecution import MixpanelAnalyticsExecution
 from Tests.Mobile_Tests.Allow_Notify import Allow_Notify
 from Tests.Mobile_Tests.AppRefresh import AppRefresh
 from Tests.Mobile_Tests.Login_with_email import Login_with_email
+from Tests.Mobile_Tests.Sign_up_with_email import Sign_up_with_email
 from Tests.Mobile_Tests.Ewaste_flow import Ewaste_flow
 import csv
 from Tests.Mobile_Tests.TrackActions import TrackActions
@@ -34,6 +37,19 @@ class test_suite:
             Login_with_email_status = "Fail"
             log_test_result("Verify that user should be login successfully",
                             Login_with_email_status)
+
+    @pytest.mark.csv
+    def test_signup_email(self):
+        exe_signup = Sign_up_with_email()
+        if exe_signup.test_signup_with_email():
+            Signup_with_email_status = "Pass"
+            log_test_result("Verify that user account should be created successfully ",
+                            Signup_with_email_status)
+
+        else:
+            Signup_with_email_status = "Fail"
+            log_test_result("Verify that user account should be created successfully",
+                            Signup_with_email_status)
 
     @pytest.mark.csv
     def test_AllowNotify(self):
@@ -156,13 +172,15 @@ def log_test_result(test_name, status):
 
         writer.writerows(csv_rows)
 
-# if __name__ == "__main__":
-#     pytest.main()
-#       run = test_suite()
-#     run.test_login()
-#     run.test_trackAction()
-#     run.test_compost()
-#     run.test_ewaste()
-#     run.mixpanel_export()
-#     run.compost_verify()
-#     run.ewaste_verify()
+
+if __name__ == "__main__":
+    pytest.main()
+    run = test_suite()
+    run.test_signup_email()
+    run.test_AllowNotify()
+    run.test_trackAction()
+    run.test_compost()
+    run.test_ewaste()
+    run.mixpanel_export()
+    run.compost_verify()
+    run.ewaste_verify()

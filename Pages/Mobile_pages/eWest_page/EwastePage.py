@@ -113,24 +113,24 @@ class EwastePage:
             print(f"Exception occurred: {e}")
             return False
 
-    def ewaste_action_btn_not_sure(self):
-        try:
-            # Check for iOS specific elements
-            if self.is_ios():
-                self.find_element("i_ewaste_action_btn").click()
-                return True
-
-            # Check for Android specific elements
-            elif self.is_android():
-                self.find_element("ewaste_action_btn").click()
-                return True
-
-            # If neither iOS nor Android elements are found, raise an exception
-            else:
-                raise Exception("ewaste_action_btn element not found for any platform.")
-        except Exception as e:
-            print(f"Exception occurred: {e}")
-            return False
+    # def ewaste_action_btn_not_sure(self):
+    #     try:
+    #         # Check for iOS specific elements
+    #         if self.is_ios():
+    #             self.find_element("i_ewaste_action_btn").click()
+    #             return True
+    #
+    #         # Check for Android specific elements
+    #         elif self.is_android():
+    #             self.find_element("ewaste_action_btn").click()
+    #             return True
+    #
+    #         # If neither iOS nor Android elements are found, raise an exception
+    #         else:
+    #             raise Exception("ewaste_action_btn element not found for any platform.")
+    #     except Exception as e:
+    #         print(f"Exception occurred: {e}")
+    #         return False
 
     # def ewaste_not_sure_btn(self):
     #     try:
@@ -377,9 +377,29 @@ class EwastePage:
             return False
 
     def is_ios(self):
-        platform_name = self.driver.desired_capabilities['platformName']
+        platform_name = self.driver.capabilities['platformName']
         return platform_name.lower() == 'ios'
 
     def is_android(self):
-        platform_name = self.driver.desired_capabilities['platformName']
+        platform_name = self.driver.capabilities['platformName']
         return platform_name.lower() == 'android'
+
+# if __name__ == "__main__":
+#     pytest.main()
+#     run = EwastePage()
+# run.ewaste_action_btn()
+# time.sleep(3)
+# run.ewaste_no_btn()
+# run.ewaste_no_arrow()
+# run.ewaste_action_btn()
+# run.ewaste_yes_btn()
+# run.ewaste_yes_arrow()
+# run.ewaste_map_link()
+# run.ewaste_map_details_cross()
+# run.ewaste_cam_plus_btn()
+# run.ewaste_camera_btn()
+# run.ewaste_camera_permission()
+# run.ewaste_camera_capture()
+# run.save_ok_photo()
+# run.verify_complete_btn()
+# run.completed_action_btn()

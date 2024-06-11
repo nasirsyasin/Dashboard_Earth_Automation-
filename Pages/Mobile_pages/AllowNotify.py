@@ -66,15 +66,6 @@ class AllowNotify:
             print(f"Exception occurred: {e}")
             return False
 
-    def app_refresh(self):
-        try:
-            self.driver.close_app()
-            self.driver.launch_app()
-            return True
-        except Exception as e:
-            print(f"Exception occurred: {e}")
-            return False
-
     def is_ios(self):
         platform_name = self.driver.capabilities['platformName']
         return platform_name.lower() == 'ios'
@@ -83,8 +74,8 @@ class AllowNotify:
         platform_name = self.driver.capabilities['platformName']
         return platform_name.lower() == 'android'
 
-
-if __name__ == "__main__":
-    pytest.main()
-    run = AllowNotify()
-    run.allow_app_notify()
+#
+# if __name__ == "__main__":
+#     pytest.main()
+#     run = AllowNotify()
+#     run.app_refresh()

@@ -19,7 +19,7 @@ class Allow_Notify:
     @pytest.mark.csv
     def test_Allow_notify(self):
         ta = AllowNotify()
-        if ta.allow_notif():
+        if ta.allow_app_notify():
             allow_notif_status = 'Pass'
             # test_case_key = "DT-T255"  # Assuming test case key is constant for this example custom_test_step_results =
             # customize_test_step_results(test_case_key=test_case_key) test_manager.make_post_request_with_results(

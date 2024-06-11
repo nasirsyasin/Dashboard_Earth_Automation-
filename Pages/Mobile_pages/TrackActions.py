@@ -19,7 +19,7 @@ class TrackAction:
     def _initialize(self):
         self.xpath_map = {
             # android xpath
-            "TrackAction_btn": '//android.view.ViewGroup[@content-desc="Track an action!"]',
+            "TrackAction_btn": '//android.view.ViewGroup[@content-desc="Track an action!"]/android.widget.TextView',
             "tooltip_1_nxt_btn": '//android.view.ViewGroup[@content-desc="Next"]',
             "tooltip_2_done": '//android.view.ViewGroup[@content-desc="Done"]',
 
@@ -34,7 +34,7 @@ class TrackAction:
         self.driver = AppiumDriverSingleton().get_driver
 
     def find_element(self, element_name):
-        return WebDriverWait(self.driver, 100).until(
+        return WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, self.xpath_map[element_name])))
 
     def tooltip_1_nxt(self):
@@ -82,13 +82,13 @@ class TrackAction:
     def trackActions(self):
         try:
             # Check for iOS specific elements
-            if self.is_ios():
-                self.find_element("i_TrackAction_btn").click()
+            if self.is_android():
+                self.find_element("TrackAction_btn").click()
                 return True
 
             # Check for Android specific elements
-            elif self.is_android():
-                self.find_element("TrackAction_btn").click()
+            elif self.is_ios():
+                self.find_element("i_TrackAction_btn").click()
                 return True
 
             # If neither iOS nor Android elements are found, raise an exception
@@ -106,8 +106,7 @@ class TrackAction:
         platform_name = self.driver.capabilities['platformName']
         return platform_name.lower() == 'android'
 
-
-if __name__ == "__main__":
-    pytest.main()
-    run = TrackAction()
-    run.trackActions()
+# if __name__ == "__main__":
+#     pytest.main()
+#     run = TrackAction()
+#     run.trackActions()

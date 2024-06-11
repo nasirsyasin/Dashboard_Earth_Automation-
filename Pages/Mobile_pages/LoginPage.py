@@ -166,13 +166,12 @@ class LoginPage:
         platform_name = self.driver.capabilities['platformName']
         return platform_name.lower() == 'android'
 
-
-if __name__ == "__main__":
-    pytest.main()
-    run = LoginPage()
-    run.launching_continue_one()
-    run.launching_continue_two()
-    run.login_link()
-    run.email_input()
-    run.password_input()
-    run.login_btn()
+# if __name__ == "__main__":
+#     pytest.main()
+#     run = LoginPage()
+#     run.launching_continue_one()
+#     run.launching_continue_two()
+#     run.login_link()
+#     run.email_input()
+#     run.password_input()
+#     run.login_btn()
