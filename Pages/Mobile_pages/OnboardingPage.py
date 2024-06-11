@@ -217,7 +217,7 @@ class OnboardingPage:
 
             # Check for Android specific elements
             elif self.is_android():
-                self.find_element("input_first_name").send_keys("hank")
+                self.find_element("input_first_name").send_keys("William")
                 return True
             # If neither iOS nor Android elements are found, raise an exception
             else:
@@ -231,12 +231,12 @@ class OnboardingPage:
         try:
             # Check for iOS specific elements
             if self.is_ios():
-                self.find_element("i_input_last_name").send_keys("ricky")
+                self.find_element("i_input_last_name").send_keys("jack")
                 return True
 
             # Check for Android specific elements
             elif self.is_android():
-                self.find_element("input_last_name").send_keys("ricky")
+                self.find_element("input_last_name").send_keys("jack")
                 return True
             # If neither iOS nor Android elements are found, raise an exception
             else:

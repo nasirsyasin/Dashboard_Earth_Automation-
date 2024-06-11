@@ -57,7 +57,9 @@ class AllowNotify:
 
             # Check for Android specific elements
             elif self.is_android():
-                self.find_element("notif_allow").click()
+                allow_alert = self.driver.switch_to.alert
+                allow_alert.accept()
+                # self.find_element("notif_allow").click()
                 return True
             # If neither iOS nor Android elements are found, raise an exception
             else:
@@ -74,7 +76,6 @@ class AllowNotify:
         platform_name = self.driver.capabilities['platformName']
         return platform_name.lower() == 'android'
 
-#
 # if __name__ == "__main__":
 #     pytest.main()
 #     run = AllowNotify()
