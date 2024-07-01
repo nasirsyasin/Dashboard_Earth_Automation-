@@ -1,9 +1,7 @@
 import csv
 import time
-
 from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
-
 from Pages.Web_pages.mixpanel_web_access import driver_access_mixpanel
 from Utility.web_driver_base_setup import loadCookies
 

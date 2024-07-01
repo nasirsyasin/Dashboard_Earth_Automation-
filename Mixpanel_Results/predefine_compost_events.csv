@@ -1,10 +1,13 @@
 Event Name,test_case_key
 MVP_homescreen_your_tab_clicked,DT-T51
+logged_climate_action,DT-T744
 MVP_no_flow_arrow_3_clicked,DT-T38
-MVP_yes_flow_arrow_1_clicked,DT-T42
-MVP_no_flow_arrow_2_clicked,DT-T39
-MVP_no_flow_arrow_1_clicked,DT-T40
-MVP_no_flow_get_started_1_expanded,DT-T47
-MVP_question_screen_no_clicked,DT-T24
+compost_yes_flow_arrow_1_clicked,DT-T42
+clicked_yes_no_composting,DT-T24
+compost_no_flow_arrow_2_clicked,DT-T39
+compost_no_flow_arrow_1_clicked,DT-T40
+compost_no_flow_get_started_1_expanded,DT-T47
+actions_viewed,DT-T790
+MVP_nice_work_modal_left,DT-T739
 MVP_question_screen_yes_clicked,DT-T22
 onboarding_waitlist_page_viewed,DT-T81

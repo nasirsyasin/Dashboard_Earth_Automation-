@@ -1,8 +1,12 @@
 Event Name,test_case_key
+MVP_nice_work_modal_left,DT-T739 
 photo_submitted_ewaste,DT-T449
 clicked_upload_ewaste_screen,DT-T448
 clicked_x_map_ewaste,DT-T447
 clicked_map_ewaste,DT-T446
-clicked_next_ewaste_LAonboarding,DT-T444
-clicked_ewaste_fork_yes,DT-T442
-clicked_ewaste_fork_no,DT-T443
+clicked_faq_ewaste,DT-T445
+clicked_next_ewaste_Laonboarding,DT-T444
+clicked_ewaste_fork_yes_no,DT-T442
+action_tapped,DT-T741
+logged_climate_action,DT-T744
+actions_viewed,DT-T790 
