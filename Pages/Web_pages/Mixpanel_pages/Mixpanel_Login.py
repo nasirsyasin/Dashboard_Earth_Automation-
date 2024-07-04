@@ -3,8 +3,9 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
+from Pages.Web_pages.mixpanel_web_access import driver_access_mixpanel
 from Utility.web_driver_base_setup import loadCookies, saveCookies
-from Pages import driver_access_mixpanel
 
 
 class Mixpanel_Login:
@@ -76,8 +77,7 @@ class Mixpanel_Login:
         except Exception as e:
             print(f"Exception: {e}")
 
-
-if __name__ == "__main__":
-    pytest.main()
-    mixpanel_login = Mixpanel_Login()
-    mixpanel_login.login_to_mixpanel()
+# if __name__ == "__main__":
+#     pytest.main()
+#     mixpanel_login = Mixpanel_Login()
+#     mixpanel_login.login_to_mixpanel()

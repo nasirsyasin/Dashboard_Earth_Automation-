@@ -3,13 +3,17 @@ import time
 from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
 from Pages.Web_pages.mixpanel_web_access import driver_access_mixpanel
+from Utility import config
+from Utility.common_cache import CommonCache
 from Utility.web_driver_base_setup import loadCookies
 
 
 class MixpanelExportEvents:
     def __init__(self):
+        self.email = config.email
         self.driver = driver_access_mixpanel()
         self.mixpanel_events = "/Users/mac/Documents/Python_Projects/DBE_Project/Mixpanel_Results/mixpanel_events.csv"
+        print(f"mixpanel: {CommonCache.email}")
 
     def export_events(self):
         loadCookies(self.driver)
@@ -48,7 +52,7 @@ class MixpanelExportEvents:
             enter_email_filter = second_shadow_root.find_element(By.CSS_SELECTOR,
                                                                  'div > div > div.mp-input-wrapper > input')
 
-            enter_email_filter.send_keys('zubair.shahid+1200073@mavrictech.com')
+            enter_email_filter.send_keys(CommonCache.email)
             time.sleep(10)
 
             filter_select_shadow_r = self.driver.find_element(By.XPATH,

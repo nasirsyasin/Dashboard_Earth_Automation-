@@ -1,14 +1,10 @@
-import time
-
-import pytest
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from Utility.random_email_generator import random_email_gen
+from Utility import config
+from Utility.RandomEmailGenerator import RandomEmailGenerator
+from Utility.common_cache import CommonCache
 from Utility.mobile_driver_setup import AppiumDriverSingleton
-
-# random email
-random_email = random_email_gen()
 
 
 class OnboardingPage:
@@ -86,6 +82,9 @@ class OnboardingPage:
 
     def __init__(self):
         self.driver = AppiumDriverSingleton().get_driver
+        run_em = RandomEmailGenerator()
+        run_em.generate_random_email()
+        print(f"onboarding: {CommonCache.email}")
 
     def find_element(self, element_name):
         return WebDriverWait(self.driver, 100).until(
@@ -193,12 +192,12 @@ class OnboardingPage:
         try:
             # Check for iOS specific elements
             if self.is_ios():
-                self.find_element("i_input_email_address").send_keys(random_email)
+                self.find_element("i_input_email_address").send_keys(CommonCache.email)
                 return True
 
             # Check for Android specific elements
             elif self.is_android():
-                self.find_element("input_email_address").send_keys(random_email)
+                self.find_element("input_email_address").send_keys(CommonCache.email)
                 return True
             # If neither iOS nor Android elements are found, raise an exception
             else:
@@ -374,8 +373,8 @@ class OnboardingPage:
 #     run.Onboarding_arrow_1()
 #     run.sign_up_with_email()
 #     run.input_email()
-#     run.input_fname()
-#     run.input_lname()
-#     run.input_password()
-#     run.input_retype_password()
-#     run.sign_up_btn()
+# run.input_fname()
+# run.input_lname()
+# run.input_password()
+# run.input_retype_password()
+# run.sign_up_btn()

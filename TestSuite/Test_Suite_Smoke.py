@@ -1,7 +1,5 @@
 import time
-
 import pytest
-
 from Pages.Web_pages.Mixpanel_pages.MixpanelAnalyticsExecution import MixpanelAnalyticsExecution
 from Tests.Mobile_Tests.Allow_Notify import Allow_Notify
 from Tests.Mobile_Tests.AppRefresh import AppRefresh
@@ -11,6 +9,7 @@ from Tests.Mobile_Tests.Ewaste_flow import Ewaste_flow
 import csv
 from Tests.Mobile_Tests.TrackActions import TrackActions
 from Tests.Mobile_Tests.compost_mvp_flow import compost_mvp_flow
+from Utility.RandomEmailGenerator import RandomEmailGenerator
 
 
 class test_suite:
@@ -50,6 +49,11 @@ class test_suite:
             Signup_with_email_status = "Fail"
             log_test_result("Verify that user account should be created successfully",
                             Signup_with_email_status)
+
+    @pytest.mark.csv
+    def test_r_email(self):
+        exe_email = RandomEmailGenerator()
+        exe_email.generate_random_email()
 
     @pytest.mark.csv
     def test_AllowNotify(self):
@@ -176,7 +180,7 @@ def log_test_result(test_name, status):
 if __name__ == "__main__":
     pytest.main()
     run = test_suite()
-    # run.test_signup_email()
+    run.test_signup_email()
     # run.test_AllowNotify()
     # run.test_trackAction()
     # run.test_compost()

@@ -1,8 +1,6 @@
 import csv
 import time
-
 import pytest
-
 from Pages.Mobile_pages.OnboardingPage import OnboardingPage
 
 
@@ -36,7 +34,7 @@ class Sign_up_with_email:
                     sign_up_with_email = 'Pass'
                     log_test_result("Verify that sign_up_with_email button should be tapped successfully",
                                     sign_up_with_email)
-
+                    time.sleep(3)
                     if signUp.input_email():
                         email_input_status = 'Pass'
                         log_test_result("Verify that user email should be entered successfully",
@@ -139,8 +137,8 @@ def log_test_result(test_name, status):
 
         writer.writerows(csv_rows)
 
-#
-# if __name__ == "__main__":
-#     pytest.main()
-#     exe_signup = Sign_up_with_email()
-#     exe_signup.test_signup_with_email()
+
+if __name__ == "__main__":
+    pytest.main()
+    exe_signup = Sign_up_with_email()
+    exe_signup.test_signup_with_email()

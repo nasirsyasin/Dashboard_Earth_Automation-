@@ -19,7 +19,7 @@ class AppiumDriverSingleton:
     def create_driver():
         capabilities = {
             "platformName": "android",
-            "appium:deviceName": "RF8RC109TVZ",
+            "appium:deviceName": "3f8b7a18",
             "appium:app": "/Users/mac/Documents/Python_Projects/DBE_Project/Resources/stage-600.apk",
             "appium:automationName": "UiAutomator2",
             "skipDeviceInitialization": True,
