@@ -19,7 +19,7 @@ class TrackAction:
     def _initialize(self):
         self.xpath_map = {
             # android xpath
-            "TrackAction_btn": '//android.view.ViewGroup[@content-desc="Track an action!"]/android.widget.TextView',
+            "TrackAction_btn": '//android.view.ViewGroup[@content-desc="Track an action"]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView',
             "tooltip_1_nxt_btn": '//android.view.ViewGroup[@content-desc="Next"]',
             "tooltip_2_done": '//android.view.ViewGroup[@content-desc="Done"]',
 

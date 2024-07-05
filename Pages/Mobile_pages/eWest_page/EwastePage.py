@@ -43,7 +43,7 @@ class EwastePage:
             "ewaste_camera_capture": '//android.view.ViewGroup[@content-desc="Take picture"]',
             "save_ok_photo": '//android.widget.Button[@content-desc="OK"]',
             "verify_complete_btn": '//android.view.ViewGroup[@content-desc="Verify and complete.."]',
-            "completed_action_btn": '//android.view.ViewGroup[@content-desc="Continue"]',
+            "completed_action_btn": '//android.view.ViewGroup[@content-desc="Continue 1"]',
             "ewaste_cam_plus_btn": '//android.view.ViewGroup[@content-desc="take or select a photo from your library"]/android.view.ViewGroup/android.widget.TextView',
             # iOS Xpath
 

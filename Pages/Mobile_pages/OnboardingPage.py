@@ -1,7 +1,6 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from Utility import config
 from Utility.RandomEmailGenerator import RandomEmailGenerator
 from Utility.common_cache import CommonCache
 from Utility.mobile_driver_setup import AppiumDriverSingleton

@@ -4,6 +4,8 @@ import pytest
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+
+from Utility.common_cache import CommonCache
 from Utility.mobile_driver_setup import AppiumDriverSingleton
 
 
@@ -98,7 +100,7 @@ class LoginPage:
             if self.is_ios():
                 email_input = self.find_element("i_email_input")
                 email_input.clear()
-                email_input.send_keys("zubair.shahid+1200073@mavrictech.com")
+                email_input.send_keys(CommonCache.email)
                 return True
 
             # Check for Android specific elements

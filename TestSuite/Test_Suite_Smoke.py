@@ -41,14 +41,14 @@ class test_suite:
     def test_signup_email(self):
         exe_signup = Sign_up_with_email()
         if exe_signup.test_signup_with_email():
-            Signup_with_email_status = "Pass"
+            Signup_email_status = "Pass"
             log_test_result("Verify that user account should be created successfully ",
-                            Signup_with_email_status)
+                            Signup_email_status)
 
         else:
-            Signup_with_email_status = "Fail"
+            Signup_email_status = "Fail"
             log_test_result("Verify that user account should be created successfully",
-                            Signup_with_email_status)
+                            Signup_email_status)
 
     @pytest.mark.csv
     def test_r_email(self):
@@ -59,92 +59,92 @@ class test_suite:
     def test_AllowNotify(self):
         exe_al = Allow_Notify()
         if exe_al.test_Allow_notify():
-            test_allowNotification_status = "Pass"
+            allowNotification_status = "Pass"
             log_test_result("Verify that Allow Notif button should be tapped successfully ",
-                            test_allowNotification_status)
+                            allowNotification_status)
 
         else:
-            test_allowNotification_status = "Fail"
+            allowNotification_status = "Fail"
             log_test_result("Verify that Allow Notif button should be tapped successfully ",
-                            test_allowNotification_status)
+                            allowNotification_status)
 
     @pytest.mark.csv
     def test_trackAction(self):
         exe_ta = TrackActions()
         if exe_ta.test_TrackAction():
-            test_TrackAction_status = "Pass"
+            TrackAction_status = "Pass"
             log_test_result("Verify that tooltips and track action button should be performed successfully ",
-                            test_TrackAction_status)
+                            TrackAction_status)
 
         else:
-            test_TrackAction_status = "Fail"
+            TrackAction_status = "Fail"
             log_test_result("Verify that tooltips and track action button should be performed successfully",
-                            test_TrackAction_status)
+                            TrackAction_status)
 
     @pytest.mark.csv
     def test_compost(self):
         exe_com = compost_mvp_flow()
         if exe_com.test_compost_mvp_screens():
-            compost_mvp_status = "Pass"
+            compost_status = "Pass"
             log_test_result("Verify that compost_mvp should be performed successfully",
-                            compost_mvp_status)
+                            compost_status)
 
         else:
-            compost_mvp_status = "Fail"
+            compost_status = "Fail"
             log_test_result("Verify that compost_mvp should be performed successfully",
-                            compost_mvp_status)
+                            compost_status)
 
     @pytest.mark.csv
     def test_ewaste(self):
         exe_ew = Ewaste_flow()
         if exe_ew.test_Ewaste():
-            Execute_ewaste_events_verif_status = "Pass"
+            Execute_ewaste_events_status = "Pass"
             log_test_result("Verify that Ewaste events should be verified successfully",
-                            Execute_ewaste_events_verif_status)
+                            Execute_ewaste_events_status)
 
         else:
-            Execute_ewaste_events_verif_status = "Fail"
+            Execute_ewaste_events_status = "Fail"
             log_test_result("Verify that Ewaste events should be verified successfully",
-                            Execute_ewaste_events_verif_status)
+                            Execute_ewaste_events_status)
 
     @pytest.mark.csv
     def mixpanel_export(self):
         mxp_ana = MixpanelAnalyticsExecution()
         if mxp_ana.export_events():
-            Execute_mxp_events_verif_status = "Pass"
+            Execute_mxp_events_status = "Pass"
             log_test_result("Verify that Mixpanel Analytics Executed successfully",
                             Execute_mxp_events_verif_status)
 
         else:
-            Execute_mxp_events_verif_status = "Fail"
+            Execute_mxp_events_status = "Fail"
             log_test_result("Verify that Mixpanel Analytics Executed successfully",
-                            Execute_mxp_events_verif_status)
+                            Execute_mxp_events_status)
 
     @pytest.mark.csv
     def compost_verify(self):
         mxp_cmp = MixpanelAnalyticsExecution()
         if mxp_cmp.compost_result():
-            Execute_mxp_events_verif_status = "Pass"
+            Execute_mxp_events_status = "Pass"
             log_test_result("Verify that Mixpanel Compost Analytics Executed successfully",
-                            Execute_mxp_events_verif_status)
+                            Execute_mxp_events_status)
 
         else:
-            Execute_mxp_events_verif_status = "Fail"
+            Execute_mxp_events_status = "Fail"
             log_test_result("Verify that Mixpanel Compost Analytics Executed successfully",
-                            Execute_mxp_events_verif_status)
+                            Execute_mxp_events_status)
 
     @pytest.mark.csv
     def ewaste_verify(self):
         mxp_ew = MixpanelAnalyticsExecution()
         if mxp_ew.ewaste_result():
-            Execute_mxp_events_verif_status = "Pass"
+            Execute_mxp_events_status = "Pass"
             log_test_result("Verify that Mixpanel Ewaste Analytics Executed successfully",
-                            Execute_mxp_events_verif_status)
+                            Execute_mxp_events_status)
 
         else:
-            Execute_mxp_events_verif_status = "Fail"
+            Execute_mxp_events_status = "Fail"
             log_test_result("Verify that Mixpanel Ewaste Analytics Executed successfully",
-                            Execute_mxp_events_verif_status)
+                            Execute_mxp_events_status)
 
     @pytest.mark.csv
     def refresh_app(self):
@@ -180,11 +180,11 @@ def log_test_result(test_name, status):
 if __name__ == "__main__":
     pytest.main()
     run = test_suite()
-    run.test_signup_email()
+    # run.test_signup_email()
     # run.test_AllowNotify()
     # run.test_trackAction()
     # run.test_compost()
     # run.test_ewaste()
     run.mixpanel_export()
-    # run.compost_verify()
-    # run.ewaste_verify()
+    run.compost_verify()
+    run.ewaste_verify()

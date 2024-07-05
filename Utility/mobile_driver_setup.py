@@ -20,7 +20,7 @@ class AppiumDriverSingleton:
         capabilities = {
             "platformName": "android",
             "appium:deviceName": "3f8b7a18",
-            "appium:app": "/Users/mac/Documents/Python_Projects/DBE_Project/Resources/stage-600.apk",
+            "appium:app": "/Users/mac/Documents/Python_Projects/DBE_Project/Resources/stage-602.apk",
             "appium:automationName": "UiAutomator2",
             "skipDeviceInitialization": True,
             "skipServerInstallation": True,
