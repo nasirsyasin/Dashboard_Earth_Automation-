@@ -186,5 +186,5 @@ if __name__ == "__main__":
     # run.test_compost()
     # run.test_ewaste()
     run.mixpanel_export()
-    run.compost_verify()
-    run.ewaste_verify()
+    # run.compost_verify()
+    # run.ewaste_verify()

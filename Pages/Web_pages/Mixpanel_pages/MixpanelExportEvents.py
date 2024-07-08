@@ -50,7 +50,7 @@ class MixpanelExportEvents:
             enter_email_filter = second_shadow_root.find_element(By.CSS_SELECTOR,
                                                                  'div > div > div.mp-input-wrapper > input')
 
-            enter_email_filter.send_keys("zubair.shahid+22316@mavrictech.com")
+            enter_email_filter.send_keys(CommonCache.email)
             time.sleep(10)
 
             filter_select_shadow_r = self.driver.find_element(By.XPATH,
@@ -59,7 +59,7 @@ class MixpanelExportEvents:
                                                                                     'div > div > div.pvs-filter-property-values > mp-items-menu')
             second2_shadow_root = element2_within_first_shadow_root.shadow_root
             select_email_filter = second2_shadow_root.find_element(By.CSS_SELECTOR,
-                                                                   'div > div > div:nth-child(3) > ul > div > li > mp-checkbox')
+                                                                   'div > div > div > ul > div:nth-child(2) > li > mp-checkbox')
 
             select_email_filter.click()
             time.sleep(5)
@@ -92,6 +92,5 @@ class MixpanelExportEvents:
                         csvwriter.writerow([event_name])
 
             time.sleep(10)
-
         except Exception as e:
             print(f"Exception: {e}")

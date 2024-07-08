@@ -12,10 +12,11 @@ options = Options()
 def web_driver_setup(web_url):
 
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    driver.maximize_window()
 
     driver.get(web_url)
 
-    time.sleep(15)
+    # time.sleep(5)
 
     return driver
 
