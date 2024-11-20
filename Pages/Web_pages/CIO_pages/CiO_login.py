@@ -27,7 +27,7 @@ def test_cio_login():
         )
         google_email_input.click()
         google_email_input.clear()
-        google_email_input.send_keys("zubair.shahid@mavrictech.com")
+        google_email_input.send_keys("email")
         time.sleep(10)
         xpath_email_next_btn = "//div[@id = 'identifierNext']/div/button"
         google_email_next_btn = WebDriverWait(driver, 100).until(
@@ -41,7 +41,7 @@ def test_cio_login():
         )
         google_pwd_input.click()
         google_pwd_input.clear()
-        google_pwd_input.send_keys("Devigital@321")
+        google_pwd_input.send_keys("email")
         time.sleep(10)
         xpath_pwd_btn = "//div[@id = 'passwordNext']/div/button"
         google_pwd_next_btn = WebDriverWait(driver, 100).until(
