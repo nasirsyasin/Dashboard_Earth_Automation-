@@ -43,7 +43,7 @@ class Mixpanel_Login:
             )
             email_input.click()
             email_input.clear()
-            email_input.send_keys("zubair.shahid@mavrictech.com")
+            email_input.send_keys("email")
 
             xpath_Next_button = "//div[@id = 'identifierNext']/div/button"
             next_btn = WebDriverWait(self.driver, 100).until(
@@ -58,7 +58,7 @@ class Mixpanel_Login:
             )
             password_input.click()
             password_input.clear()
-            password_input.send_keys("Devigital@321")
+            password_input.send_keys("password")
 
             time.sleep(10)
 
