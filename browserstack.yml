@@ -1,7 +1,7 @@
-userName: zubairshahid_nJNfdh
-accessKey: quhiSvWjy1Var2txvskx
+userName: z
+accessKey: q
 framework: pytest
-app: bs://8e9a0c887c95b454bfe01f0ad3ec71b4f33725f9
+app: bs://8e
 platforms:
   - platformName: android
     deviceName: Samsung Galaxy A52
